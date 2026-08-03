@@ -5,17 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destination</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="destination.css">
 </head>
 
 <body>
+  <header class="header">
+    <h1>Destination</h1>
+    <nav class="nav">
+      <a href="index.html" class="back-button">Back to Home</a>
+      <a href="destination.html" class="active">Destination</a>
+      <a href="trip-planner.html">Trip Planner</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
+  <main class="main-content">
+    <section class="destination-info">
+      <h2>Explore Your Destination</h2>
+      <p>Discover the best places to visit, eat, and stay during your trip. Our destination guide provides you with all
+        the information you need to make the most of your journey.</p>
+    </section>
 
+    <section class="filter" aria-label="Filter destination by category">
+      <h3>Filter by Category</h3>
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="beach">Beaches</button>
+      <button class="filter-btn" data-category="adventure">Mountains</button>
+      <button class="filter-btn" data-category="city">Cities</button>
+      <button class="filter-btn" data-category="culture">Cultural</button>
+      <button class="filter-btn" data-category="budget">Budget</button>
+    </section>
 
+    <section id="destination-grid" class="destination-grid">
+      <!-- Destination cards will be dynamically inserted here -->
+    </section>
+  </main>
 
-
-
+  <footer>
+    <p>&copy; 2026 Atlas. All rights reserved.</p>
+  </footer>
   <script src="destination.js"></script>
+</body>
+
+</html>
+</header>
+<script src="destination.js"></script>
 </body>
 
 </html>
