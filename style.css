@@ -49,11 +49,6 @@ header.scrolled{
     gap: 12px;
 }
 
-.logo img{
-    width: 42px;
-    height: 42px;
-}
-
 .logo h1{
     color: black;
     letter-spacing: 3px;
@@ -158,10 +153,12 @@ header.scrolled{
     padding: 0 8%;
 }
 
-.hero content h1{
-    font-size: 7rem;
+.hero-content h2{
+    font-size: 6rem;
     margin-bottom: 20px;
     letter-spacing: 2px;
+    
+    font-style: italic;
 }
 
 .hero-content p{
@@ -170,6 +167,7 @@ header.scrolled{
     line-height: 1.8;
 
     margin-bottom: 35px;
+    font-style: oblique;
 }
 
 /* DESCRIPTION SECTION */
@@ -213,5 +211,49 @@ header.scrolled{
     font-size: 1.5rem;
 }
 
+/* PARALLAX SECTION */
 
+#parallax{
+    height: 70vh;
+    background-image: url(rhino.jpg);
+    background-size: cover;
 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+
+#parallax::before{
+    content: "";
+    position:absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, .45);
+}
+
+.parallax-overlay{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    color: wheat;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.parallax-overlay h4{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.parallax-overlay p{
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
