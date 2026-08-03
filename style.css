@@ -257,3 +257,105 @@ header.scrolled{
     line-height: 1.8;
     margin-bottom: 30px;
 }
+
+/* ENQUIRY SECTION */
+
+#enquiry{
+    padding: 100px 8%;
+    background-color: white;
+}
+
+.enquiry-container{
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.enquiry-container h5{
+    font-size: 2.8rem;
+    color: #1b4965;
+    margin-bottom: 20px;
+}
+
+.enquiry-container p{
+    color: black;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.input-group{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    border-radius: 10px;
+}
+
+.input-group input{
+    max-width: 50vh;
+}
+
+input,textarea{
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #dddd;
+
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+
+    transition: .3s;
+    border-color: #f4a261;
+}
+
+input:focus, textarea:focus{
+    border-color: #1b4965;
+    box-shadow: 0 0 10px rgba(27, 73, 101, .2);
+}
+
+textarea{
+    resize: none;
+    margin-bottom: 30px;
+}
+
+button{
+    background: #1b4965;
+    color: white;
+    border: none;
+
+    padding: 16px 40px;
+    cursor: pointer;
+    transition: .3s;
+
+    border-radius: 10px;
+}
+
+button:hover{
+    background: #f4a261;
+    transform: translateY(-3px);
+}
+
+#formMessage{
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+
+    font-weight: 500;
+    display: none;
+}
+
+#formMessage.error{
+    display: block;
+    background: #ffe5e5;
+    color: #c62828;
+
+    border-left: 5px solid #c62828;
+}
+
+#formMessage.success{
+    display: block;
+    background: #e8f5e9;
+    color: #2e7d32;
+
+    border-left: 5px solid #2e7d32;
+}
