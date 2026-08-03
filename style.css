@@ -98,3 +98,82 @@ header.scrolled{
     width: 100%;
  }
  
+ /* HERO SECTION */
+
+ #hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+ }
+
+.slides{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    opacity: 0;
+    transition:opacity 1.5s ease;
+
+    animation:zoom 12s linear infinite;
+}
+
+.slide.active{
+    opacity: 1;
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+
+    z-index:2 ;
+}
+
+.hero-content{
+    position: relative;
+    z-index: 3;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    padding: 20px;
+}
+
+.hero content h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-content p{
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+@keyframes zoom{
+    from{
+        transform: scale(1);
+    }
+
+    to{
+        transform: scale(1.1);
+    }
+}
