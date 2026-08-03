@@ -28,3 +28,13 @@ header{
     z-index: 1000;
 }
 
+/* Activated when scrolling */
+
+header.scrolled{
+    background: rgba(27, 73, 101, .93);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    height: 70px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
