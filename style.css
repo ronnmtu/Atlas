@@ -123,11 +123,12 @@ header.scrolled{
     opacity: 0;
     transition:opacity 1.5s ease;
 
-    animation:zoom 12s linear infinite;
+    animation: none;
 }
 
 .slide.active{
     opacity: 1;
+    animation: zoom 7s linear forwards;
 }
 
 .overlay{
