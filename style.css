@@ -172,6 +172,8 @@ header.scrolled{
     margin-bottom: 35px;
 }
 
+/* DESCRIPTION SECTION */
+
 .description{
     background-color: grey;
     justify-content: center;
@@ -181,7 +183,7 @@ header.scrolled{
     color: white;
 }
 
-/* DESCRIPTIN SECTION */
+
 .description h3{
     font-size: 5rem;
     font-family: 'Times New Roman', Times, serif;
@@ -210,4 +212,6 @@ header.scrolled{
     font-style: oblique;
     font-size: 1.5rem;
 }
+
+
 
