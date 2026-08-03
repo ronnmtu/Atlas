@@ -1,3 +1,4 @@
+// HEADER SCROLL
 const header = document.querySelector("#header");
 
 window.addEventListener("scroll", () =>{
@@ -11,3 +12,4 @@ window.addEventListener("scroll", () =>{
 
     }
 });
+
