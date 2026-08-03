@@ -21,6 +21,7 @@ let currentSlide = 0;
 
 function changeSlide(){
     slides[currentSlide].classList.remove("active");
+    
     currentSlide++;
 
     if(currentSlide >= slides.length){
