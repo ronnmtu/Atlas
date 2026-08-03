@@ -1,0 +1,198 @@
+/* ===========================
+   Color Palette
+=========================== */
+
+:root{
+    --primary:#1B4965;
+    --secondary:#5FA8D3;
+    --accent:#F4A261;
+    --background:#F7F9FA;
+    --text:#1A1A1A;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* ===========================
+   Navigation Bar
+=========================== */
+
+header{
+    background:var(--primary);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--accent);
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+.hero{
+    height:70vh;
+    background:linear-gradient(rgba(27,73,101,.65),
+    rgba(27,73,101,.65)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    width:70%;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+/* ===========================
+   About
+=========================== */
+
+.about{
+    padding:70px 10%;
+}
+
+.about h2{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:25px;
+    font-size:36px;
+}
+
+.about p{
+    max-width:900px;
+    margin:20px auto;
+    text-align:center;
+    font-size:18px;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    padding:40px 10%;
+}
+
+.card{
+    background:white;
+    width:320px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#555;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    margin-top:60px;
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .hero{
+        height:60vh;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+}
