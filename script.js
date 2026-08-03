@@ -21,7 +21,7 @@ let currentSlide = 0;
 
 function changeSlide(){
     slides[currentSlide].classList.remove("active");
-    
+
     currentSlide++;
 
     if(currentSlide >= slides.length){
@@ -32,4 +32,4 @@ function changeSlide(){
     slides[currentSlide].classList.add("active");
 }
 
-setInterval(changeSlide,7000);
+setInterval(changeSlide,5000);
