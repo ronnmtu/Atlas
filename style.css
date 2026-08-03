@@ -172,3 +172,42 @@ header.scrolled{
     margin-bottom: 35px;
 }
 
+.description{
+    background-color: grey;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+/* DESCRIPTIN SECTION */
+.description h3{
+    font-size: 5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+}
+
+.description-paragraph{
+    font-size: 1.7rem;
+    margin: 0 auto;
+    max-width: 800px;
+
+    line-height: 1.8;
+}
+
+.description-para{
+    font-size: 1.1rem;
+    margin: 0 auto;
+    max-width: 800px;
+
+    line-height: 1.5;
+    font-weight: 50;
+}
+
+.description-para span{
+    color: gold;
+    font-style: oblique;
+    font-size: 1.5rem;
+}
+
