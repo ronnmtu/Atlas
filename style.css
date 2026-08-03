@@ -38,3 +38,24 @@ header.scrolled{
     height: 70px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
 }
+
+/* LOGO */
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img{
+    width: 42px;;
+}
+
+.logo h1{
+    color: white;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+}
+
+
+
