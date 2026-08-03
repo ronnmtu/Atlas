@@ -169,12 +169,3 @@ header.scrolled{
     margin-bottom: 35px;
 }
 
-@keyframes zoom{
-    from{
-        transform: scale(1);
-    }
-
-    to{
-        transform: scale(1.1);
-    }
-}
