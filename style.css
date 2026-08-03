@@ -57,5 +57,44 @@ header.scrolled{
     font-size: 1.5rem;
 }
 
+/* NAVIGATION */
 
+.nav{
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
 
+.nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+/* Underline Animation */
+
+.nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+
+    bottom: -8px;
+    width: 0%;
+    height: 2px;
+
+    background: #f4a261;
+    transition: .3s;
+
+}
+
+.nav a:hover{
+    color: #f4a261;
+}
+ .nav a:hover::after{
+    width: 100%;
+ }
+ 
