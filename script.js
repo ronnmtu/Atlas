@@ -108,6 +108,6 @@ enquiryForm.addEventListener("submit",function(event){
         .scrollIntoView({
             behavior:"smooth"});
 
-    },2500);
+    },4000);
 
 });
