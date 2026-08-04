@@ -42,7 +42,7 @@ header.scrolled{
     -webkit-backdrop-filter: blur(12px);
 
     height: 70px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
 }
 
 /* LOGO */
@@ -130,7 +130,6 @@ header.scrolled{
 
 .slide.active{
     opacity: 1;
-    animation: zoom 7s linear forwards;
 }
 
 .overlay{
@@ -453,8 +452,9 @@ button:hover{
     z-index: 11;
 }
 
-.back-to-top:hover{
+.back-to-top a:hover{
     transform: translateY(-10px);
+    color: #1b4965;
 }
 
 .footer-bottom{
@@ -465,4 +465,193 @@ button:hover{
 
 .footer-bottom p{
     margin: 8px 0;
+}
+
+/* RESPONSIVE LAYOUT */
+
+/* TABLETS */
+
+@media (max-width: 1024px){
+    header{
+        padding: 0 40px;
+    }
+
+    .hero-content h2{
+        font-size: 4.5rem;
+    }
+
+    .hero-content p{
+        font-size: 1.5rem;
+        max-width: 600px;
+    }
+
+    .description h3{
+        font-size: 4rem;
+    }
+
+    .description-paragraph,
+    .description-para{
+        padding: 0 30px;
+    }
+
+    .input-group input{
+        max-width: 100%;
+    }
+}
+
+/* LARGE PHONES */
+
+@media (max-width: 768px){
+    header{
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+
+        height: auto;
+        padding: 20px;
+    }
+
+    .nav{
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav a{
+        font-size: 1rem;
+    }
+
+    .hero-content{
+        align-items: center;
+        text-align: center;
+        padding: 0 30px;
+    }
+
+    .hero-content h2{
+        font-size: 3.2rem;
+    }
+
+    .hero-content p{
+        font-size: 1.3rem;
+    }
+
+    .description{
+        padding: 60PX 20PX;
+    }
+
+    .description H3{
+        font-size: 3rem;
+    }
+
+    .description-paragraph{
+        font-size: 1.4rem;
+    }
+
+    .description-para{
+        font-size: 1rem;
+    }
+
+    .parallax-overlay h4,
+    .parallax-overlay2 h6{
+        font-size: 2.2rem;
+    }
+
+    .parallax-overlay p,
+    .parallax-overlay2 p{
+        font-size: 1rem;
+    }
+
+    #enquiry{
+        padding: 80px 30px;
+    }
+
+    button{
+        width: 100%;
+    }
+
+    .back-to-top{
+        margin-top: - 90px;
+    }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 480px){
+    header{
+        padding: 15px;
+    }
+
+    .logo h1{
+        font-size: 1.2rem;
+    }
+
+    .nav{
+        gap: 12px;
+    }
+
+    .nav a{
+        font-size: .9rem;
+    }
+
+    .hero-content{
+        padding: 0 2px;
+    }
+
+    .hero-content h2{
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p{
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .description h3{
+        font-size: 2.3rem;
+    }
+
+    .description-paragraph{
+        font-size: 1.2rem;
+    }
+
+    .description-para{
+        font-size: .95rem;
+    }
+
+    .parallax-overlay,
+    .parallax-overlay2{
+        padding: 15px;
+    }
+
+    .parallax-overlay h4,
+    .parallax-overlay2 h6{
+        font-size: 1.8rem;
+    }
+
+    .parallax-overlay p,
+    .parallax-overlay2 p{
+        font-size: .95rem;
+    }
+
+    input,
+    textarea{
+        font-size: .95rem;
+        padding: 15px;
+    }
+
+    button{
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .back-to-top a{
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+    }
+
+    .footer-bottom p{
+        font-size: .9rem;
+    }
 }
