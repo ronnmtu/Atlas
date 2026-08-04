@@ -124,7 +124,8 @@ header{
 
 .card{
     background:white;
-    width:320px;
+    width:100%;
+    max-width:100%;
     padding:30px;
     border-radius:12px;
     box-shadow:0 8px 20px rgba(0,0,0,.1);
@@ -211,4 +212,19 @@ footer{
     object-fit:cover;
     border-radius:8px;
     margin-top:15px;
+}
+.parent-container{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+.card{
+    width:100%;
+}
+.parent-container .card{
+    display:grid;
+    grid-template-columns:1fr;
+}
+h2{
+    text-align:center;
 }
