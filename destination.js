@@ -146,6 +146,9 @@ function renderDestinations(list) {
       <img src="${dest.image}" alt="${dest.name}">
       <h3>${dest.name}</h3>
       <p>${dest.blurb}</p>
+      <p>Rating: ${dest.rating} ⭐</p>
+      <p>Budget: ${dest.budget}</p>
+      <p>Best Season: ${dest.season}</p>
       <button class="save-btn" data-id="${dest.id}">Save</button>
     `;
     grid.appendChild(card);
