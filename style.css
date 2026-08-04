@@ -363,3 +363,48 @@ button:hover{
 
     border-left: 5px solid #2e7d32;
 }
+
+#parallax2{
+    height: 70vh;
+    background-image: url(ocean.jpg);
+    background-size: cover;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+
+#parallax2::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(27, 73, 101, .55);
+}
+
+.parallax-overlay2{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
+    color: #f7f9fa;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.parallax-overlay2 h6{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.parallax-overlay2 p{
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
