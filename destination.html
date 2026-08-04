@@ -19,27 +19,43 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+  <div id="toast" class="toast"></div>
 
-  <main class="main-content">
-    <section class="destination-info">
-      <h2>Explore Your Destination</h2>
-      <p>Discover the best places to visit, eat, and stay during your trip. Our destination guide provides you with all
-        the information you need to make the most of your journey.</p>
-    </section>
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">
+        Discover Your Next Adventure
+      </span>
 
-    <section class="filter" aria-label="Filter destination by category">
-      <h3>Filter by Category</h3>
-      <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="beach">Beaches</button>
-      <button class="filter-btn" data-category="adventure">Mountains</button>
-      <button class="filter-btn" data-category="city">Cities</button>
-      <button class="filter-btn" data-category="culture">Cultural</button>
-      <button class="filter-btn" data-category="budget">Budget</button>
-    </section>
+      <h1>
+        Explore the World's Most Beautiful Destinations
+      </h1>
 
-    <section id="destination-grid" class="destination-grid">
-      <!-- Destination cards will be dynamically inserted here -->
-    </section>
+      <p>
+        From pristine beaches to majestic mountains, find your perfect getaway. Browse our curated list of destinations
+        and start planning your next adventure today.
+      </p>
+
+      <div class="hero-search">
+        <input type="text" id="searchInput" placeholder="Search destinations..">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="filter" aria-label="Filter destination by category">
+    <h3>Filter by Category</h3>
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="beach">Beaches</button>
+    <button class="filter-btn" data-category="adventure">Mountains</button>
+    <button class="filter-btn" data-category="city">Cities</button>
+    <button class="filter-btn" data-category="culture">Cultural</button>
+    <button class="filter-btn" data-category="budget">Budget</button>
+  </section>
+
+  <section id="destination-grid" class="destination-grid">
+    <!-- Destination cards will be dynamically inserted here -->
+  </section>
   </main>
 
   <footer>

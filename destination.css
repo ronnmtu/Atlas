@@ -23,6 +23,30 @@ html {
   scroll-behavior: smooth;
 }
 
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
@@ -34,20 +58,35 @@ body {
 header {
   background-color: var(--color-primary);
   color: white;
-  padding: 1rem 0;
-  text-align: center;
+  padding: 1.5rem 2rem 1rem;
+
 }
 
-header h1 {
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
   margin: 0;
-  font-size: 2rem;
 }
 
-header nav a {
+.nav a {
   color: white;
   text-decoration: none;
-  margin: 0 1rem;
   font-weight: bold;
+}
+
+.nav a:hover,
+.nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 filters {

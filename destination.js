@@ -128,23 +128,17 @@ grid.addEventListener("click", (event) => {
   const id = Number(event.target.dataset.id);
   const destination = destinations.find(dest => dest.id === id);
 
-  saveDestination(destination);
+  showToast(`${destination.name} saved to your wishlist.`);
 });
 
-function saveDestination(destination) {
-  // get existing saved list, or start with an empty array
-  const saved = JSON.parse(localStorage.getItem("savedDestinations")) || [];
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
 
-  // avoid saving the same destination twice
-  const alreadySaved = saved.some(d => d.id === destination.id);
-  if (alreadySaved) {
-    alert(`${destination.name} is already saved.`);
-    return;
-  }
-
-  saved.push(destination);
-  localStorage.setItem("savedDestinations", JSON.stringify(saved));
-  alert(`${destination.name} saved to your wishlist.`);
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
 }
 
 filterButtons.forEach(btn => {
