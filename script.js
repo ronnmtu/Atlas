@@ -44,20 +44,22 @@ enquiryForm.addEventListener("submit",function(event){
 
     event.preventDefault();
 
-    const name = document.querySelector(#name).value.trim();
+    const name = document.querySelector("#name").value.trim();
 
     const email = document.querySelector("#email").value.trim();
 
     const question = document.querySelector("#question").value.trim();
 
     messageBox.className = "";
-    messageBox.computedStyleMap.display = "none";
+    messageBox.style.display = "none";
 
     // Empty form
 
     if(name === "" && email === "" && question === ""){
 
         messageBox.classList.add("error");
+
+        messageBox.style.display = "block";
 
         messageBox.textContent = "Please complete the form before submiting.";
 
@@ -70,6 +72,8 @@ enquiryForm.addEventListener("submit",function(event){
 
         messageBox.classList.add("error");
 
+        messageBox.style.display = "block";
+
         messageBox.textContent = "Please fill in all required fields."
 
         return;
@@ -81,7 +85,9 @@ enquiryForm.addEventListener("submit",function(event){
 
         messageBox.classList.add("error");
 
-        messageBox.textContent = "Question must contaain at least 10 characters."
+        messageBox.style.display = "block";
+
+        messageBox.textContent = "Question must contain at least 10 characters."
 
         return;
     }
@@ -90,7 +96,9 @@ enquiryForm.addEventListener("submit",function(event){
 
     messageBox.classList.add("success");
 
-    messageBox.textContent = "Your enquiry ha sbeen submitted successfully! Our team will contact you soon";
+    messageBox.style.display = "block";
+
+    messageBox.textContent = "Your enquiry has been submitted successfully! Our team will contact you soon";
 
     enquiryForm.reset();
 
@@ -99,5 +107,7 @@ enquiryForm.addEventListener("submit",function(event){
         document.querySelector("#parallax2")
         .scrollIntoView({
             behavior:"smooth"});
+
     },2500);
+
 });
