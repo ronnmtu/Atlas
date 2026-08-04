@@ -1,5 +1,4 @@
 
-
 :root{
     --primary:#1B4965;
     --accent:#F4D35E;
@@ -10,8 +9,8 @@
 *{
     margin:0;
     padding:0;
-    box-sizing:border-box
-    font-family:'Courier New', Courier, monospace
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -33,7 +32,7 @@ header{
     width:90%;
     margin:auto;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
     align-items:center;
     padding:18px 0;
 }
@@ -58,49 +57,6 @@ header{
     color:var(--accent);
 }
 
-.hero-content{
-    width:70%;
-}
-
-.hero h1{
-    font-size:52px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:22px;
-}
-
-
-
-.about{
-    padding:70px 10%;
-}
-
-.about h2{
-    text-align:center;
-    color:var(--primary);
-    margin-bottom:25px;
-    font-size:36px;
-}
-
-.about p{
-    max-width:900px;
-    margin:20px auto;
-    text-align:center;
-    font-size:18px;
-}
-
-
-
-.cards{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-    padding:40px 10%;
-}
-
 .card{
     background:white;
     width:100%;
@@ -114,18 +70,6 @@ header{
 .card:hover{
     transform:translateY(-10px);
 }
-
-.card h3{
-    color:var(--primary);
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#555;
-}
-
-
-
 footer{
     margin-top:60px;
     background:var(--primary);
@@ -164,18 +108,11 @@ footer{
     border-radius:8px;
     margin-top:15px;
 }
-.parent-container{
-    display:flex;
-    flex-direction:column;
-    width:100%;
-}
+
 .card{
     width:100%;
 }
-.parent-container .card{
-    display:grid;
-    grid-template-columns:1fr;
-}
+
 h2{
     text-align:center;
 }
