@@ -3,6 +3,9 @@ const destinations = [
     id: 1,
     name: "Bali, Indonesia",
     blurb: "Beach and culture",
+    rating: 4.8,
+    budget: "mid-range",
+    season: "April - October",
     category: "beach",
     image: "images/bali.jfif"
   },
@@ -11,6 +14,9 @@ const destinations = [
     id: 2,
     name: "Banff, Canada",
     blurb: "Mountains and hikes",
+    rating: 4.7,
+    budget: "mid-range",
+    season: "June - September",
     category: "adventure",
     image: "images/banff.jfif"
   },
@@ -19,6 +25,9 @@ const destinations = [
     id: 3,
     name: "Paris, France",
     blurb: "City of lights",
+    rating: 4.0,
+    budget: "high-end",
+    season: "April - June",
     category: "city",
     image: "images/paris.jfif"
   },
@@ -27,6 +36,9 @@ const destinations = [
     id: 4,
     name: "Kyoto, Japan",
     blurb: "Temples and gardens",
+    rating: 4.5,
+    budget: "mid-range",
+    season: "March - May",
     category: "culture",
     image: "images/kyoto.jpg"
   },
@@ -35,6 +47,9 @@ const destinations = [
     id: 5,
     name: "Maui, Hawaii",
     blurb: "Tropical paradise",
+    rating: 4.6,
+    budget: "high-end",
+    season: "November - March",
     category: "beach",
     image: "images/maui.jfif"
   },
@@ -43,6 +58,9 @@ const destinations = [
     id: 6,
     name: "Reykjavik, Iceland",
     blurb: "Northern lights and geysers",
+    rating: 4.4,
+    budget: "mid-range",
+    season: "September - April",
     category: "adventure",
     image: "images/reyjavik.jfif"
   },
@@ -51,6 +69,9 @@ const destinations = [
     id: 7,
     name: "New York City, USA",
     blurb: "The city that never sleeps",
+    rating: 4.2,
+    budget: "high-end",
+    season: "April - June",
     category: "city",
     image: "images/new york.jfif"
   },
@@ -59,6 +80,9 @@ const destinations = [
     id: 8,
     name: "Rome, Italy",
     blurb: "Ancient history and cuisine",
+    rating: 4.3,
+    budget: "mid-range",
+    season: "April - June",
     category: "culture",
     image: "images/rome.jfif"
   },
@@ -67,6 +91,9 @@ const destinations = [
     id: 9,
     name: "Santorini, Greece",
     blurb: "White-washed buildings and sunsets",
+    rating: 4.5,
+    budget: "mid-range",
+    season: "April - October",
     category: "beach",
     image: "images/santorini.jfif"
 
@@ -76,6 +103,9 @@ const destinations = [
     id: 10,
     name: "Patagonia, Chile",
     blurb: "Glaciers and trekking",
+    rating: 4.6,
+    budget: "mid-range",
+    season: "September - April",
     category: "adventure",
     image: "images/patagonia.jfif"
   },
@@ -84,6 +114,9 @@ const destinations = [
     id: 11,
     name: "Barcelona, Spain",
     blurb: "Art and architecture",
+    rating: 4.4,
+    budget: "mid-range",
+    season: "April - October",
     category: "city",
     image: "images/barcelona.jfif"
   },
@@ -92,6 +125,9 @@ const destinations = [
     id: 12,
     name: "Istanbul, Turkey",
     blurb: "A blend of cultures and history",
+    rating: 4.3,
+    budget: "mid-range",
+    season: "April - October",
     category: "culture",
     image: "images/instabul.jfif"
   },
