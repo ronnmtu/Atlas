@@ -54,39 +54,58 @@ body {
   ;
 }
 
-
-header {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 1.5rem 2rem 1rem;
-
-}
-
-header nav {
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  padding: 18px 8%;
+  background: var(--color-primary);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.nav {
+.logo {
   display: flex;
-  gap: 24px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
 }
 
-.nav a {
-  color: white;
+.logo span {
+  font-family: var(--font-heading);
+}
+
+.header nav {
+  display: flex;
+  gap: 35px;
+}
+
+.header nav a {
+  color: var(--color-text);
   text-decoration: none;
-  font-weight: bold;
+  position: relative;
+  font-weight: 500;
 }
 
-.nav a:hover,
-.nav a.active {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: .3s;
+}
+
+.header nav a:hover::after,
+.header nav a.active::after {
+  width: 100%;
 }
 
 filters {
