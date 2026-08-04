@@ -33,3 +33,71 @@ function changeSlide(){
 }
 
 setInterval(changeSlide,5000);
+
+// ENQUIRY FORM
+
+const enquiryForm = document.querySelector("#enquiry-form");
+
+const messageBox = document.querySelector("#formMessage");
+
+enquiryForm.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const name = document.querySelector(#name).value.trim();
+
+    const email = document.querySelector("#email").value.trim();
+
+    const question = document.querySelector("#question").value.trim();
+
+    messageBox.className = "";
+    messageBox.computedStyleMap.display = "none";
+
+    // Empty form
+
+    if(name === "" && email === "" && question === ""){
+
+        messageBox.classList.add("error");
+
+        messageBox.textContent = "Please complete the form before submiting.";
+
+        return;
+    }
+
+    // Missing fields
+
+    if(name === "" || email === "" || question === ""){
+
+        messageBox.classList.add("error");
+
+        messageBox.textContent = "Please fill in all required fields."
+
+        return;
+    }
+
+    // Message too short
+
+    if(question.length < 10){
+
+        messageBox.classList.add("error");
+
+        messageBox.textContent = "Question must contaain at least 10 characters."
+
+        return;
+    }
+
+    // SUCCESSFUL SUBMISSION
+
+    messageBox.classList.add("success");
+
+    messageBox.textContent = "Your enquiry ha sbeen submitted successfully! Our team will contact you soon";
+
+    enquiryForm.reset();
+
+    setTimeout(function(){
+
+        document.querySelector("#parallax2")
+        .scrollIntoView({
+            behavior:"smooth"});
+    },2500);
+});
