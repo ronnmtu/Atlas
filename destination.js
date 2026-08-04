@@ -194,3 +194,21 @@ filterButtons.forEach(btn => {
     renderDestinations(filtered);
   });
 });
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+
+  const value = searchInput.value.toLowerCase();
+
+  const filtered = destinations.filter(dest =>
+
+    dest.name.toLowerCase().includes(value) ||
+    dest.blurb.toLowerCase().includes(value) ||
+    dest.category.toLowerCase().includes(value)
+
+  );
+
+  renderDestinations(filtered);
+
+});
