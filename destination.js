@@ -167,7 +167,23 @@ grid.addEventListener("click", (event) => {
   const id = Number(event.target.dataset.id);
   const destination = destinations.find(dest => dest.id === id);
 
-  showToast(`${destination.name} saved to your wishlist.`);
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  const alreadySaved = wishlist.some(item => item.id === destination.id);
+
+  if (!alreadySaved) {
+
+    wishlist.push(destination);
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+    showToast(`${destination.name} added to wishlist.`);
+
+  } else {
+
+    showToast(`${destination.name} is already in your wishlist.`);
+
+  }
 });
 
 function showToast(message) {
