@@ -228,3 +228,27 @@ searchInput.addEventListener("input", () => {
   renderDestinations(filtered);
 
 });
+
+document
+  .getElementById("featuredBtn")
+  .addEventListener("click", () => {
+
+    renderDestinations(
+
+      destinations.filter(dest =>
+
+        dest.name.includes("Bali")
+
+      )
+
+    );
+
+    document
+      .getElementById("destination-grid")
+      .scrollIntoView({
+
+        behavior: "smooth"
+
+      });
+
+  });
