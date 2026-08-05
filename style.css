@@ -511,6 +511,11 @@ button:hover{
         padding: 20px;
     }
 
+    header.scrolled{
+        height: auto;
+        padding: 15px 20px;
+    }
+
     .nav{
         gap: 20px;
         flex-wrap: wrap;
