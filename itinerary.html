@@ -1,0 +1,454 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS | itinerary</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div class="logo-text">
+
+                <h2>ATLAS</h2>
+
+                <span>Plan • Explore • Experience</span>
+
+            </div>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="home.html">Home</a></li>
+
+            <li><a href="destinations.html">Destinations</a></li>          
+
+            <li><a href="index.html">Itinerary</a></li>
+
+            <li><a href="tripplanner.html">Trip Planner</a></li>
+
+            <li><a href="about.html">About Us</a></li>
+
+            <li><a href="contact.html">Reach Out</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="trip-tag">
+                Coastal Escape
+            </span>
+
+            <h1>
+                Mombasa
+            </h1>
+
+            <p>
+                12 Aug → 18 Aug • 4 Travellers
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <!-- TRIP OVERVIEW -->
+
+        <section class="overview">
+
+            <div class="overview-card">
+
+                <h3>Destination</h3>
+
+                <p id="destination">
+                    Mombasa, Kenya
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h3>Duration</h3>
+
+                <p id="duration">
+                    7 Days
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h3>Travellers</h3>
+
+                <p id="travellers">
+                    4 People
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h3>Activities</h3>
+
+                <p id="activity-count">
+                    12 Planned
+                </p>
+
+            </div>
+
+        </section>
+
+         <!-- PROGRESS -->
+
+        <section class="progress-section">
+
+            <h2>Trip Progress</h2>
+
+            <div class="progress-circle">
+
+                <div class="circle">
+
+                    <span id="progress-percent">
+                        68%
+                    </span>
+
+                </div>
+
+                <p>Trip Complete</p>
+
+            </div>
+
+        </section>
+
+        <!-- STATS -->
+
+        <section class="trip-stats">
+
+            <div class="stat-card">
+
+                <h3>12</h3>
+
+                <p>Activities</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>5</h3>
+
+                <p>Attractions</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>3</h3>
+
+                <p>Restaurants</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>7</h3>
+
+                <p>Days</p>
+
+            </div>
+
+        </section>
+
+         <!-- DAY NAVIGATION -->
+
+        <section class="day-navigation">
+
+            <div class="day-tabs">
+
+                <button class="day-tab active">
+                    Day 1
+                </button>
+
+                <button class="day-tab">
+                    Day 2
+                </button>
+
+                <button class="day-tab">
+                    Day 3
+                </button>
+
+                <button class="day-tab">
+                    Day 4
+                </button>
+
+            </div>
+
+            <button id="add-day-btn">
+                + Add Day
+            </button>
+
+        </section>
+
+        <!-- TIMELINE -->
+
+        <section class="timeline-section">
+
+            <div class="timeline-header">
+
+                <h2>
+                    Day 1 Activities
+                </h2>
+
+                <button id="add-activity-btn">
+                    + Add Activity
+                </button>
+
+            </div>
+
+            <div class="timeline">
+
+                <article class="activity-card">
+
+                    <div class="activity-time">
+                        09:00
+                    </div>
+
+                    <div class="activity-details">
+
+                        <h3>
+                            Beach Walk
+                        </h3>
+
+                        <p>
+                            Bamburi Beach
+                        </p>
+
+                    </div>
+
+                    <div class="activity-actions">
+
+                        <button>
+                            Complete
+                        </button>
+
+                        <button>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <article class="activity-card">
+
+                    <div class="activity-time">
+                        13:00
+                    </div>
+
+                    <div class="activity-details">
+
+                        <h3>
+                            Seafood Lunch
+                        </h3>
+
+                        <p>
+                            Tamarind Restaurant
+                        </p>
+
+                    </div>
+
+                    <div class="activity-actions">
+
+                        <button>
+                            Complete
+                        </button>
+
+                        <button>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <article class="activity-card">
+
+                    <div class="activity-time">
+                        18:30
+                    </div>
+
+                    <div class="activity-details">
+
+                        <h3>
+                            Sunset Cruise
+                        </h3>
+
+                        <p>
+                            Marina Waterfront
+                        </p>
+
+                    </div>
+
+                    <div class="activity-actions">
+
+                        <button>
+                            Complete
+                        </button>
+
+                        <button>
+                            Delete
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ROUTE & WEATHER -->
+
+        <section class="travel-info">
+
+            <div class="route-card">
+
+                <h2>
+                    Today's Route
+                </h2>
+
+                <ul>
+
+                    <li>🏨 Hotel</li>
+
+                    <li>🌊 Beach</li>
+
+                    <li>🍤 Restaurant</li>
+
+                    <li>🌅 Marina</li>
+
+                </ul>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h2>
+                    Weather
+                </h2>
+
+                <div class="weather">
+
+                    <h3>28°C</h3>
+
+                    <p>Sunny</p>
+
+                    <span>Humidity: 70%</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NOTES -->
+
+        <section class="notes-section">
+
+            <h2>
+                Travel Notes
+            </h2>
+
+            <textarea
+                placeholder="Add notes for this trip..."
+            ></textarea>
+
+        </section>
+
+
+        <!-- ACTIONS -->
+
+        <section class="action-buttons">
+
+            <button id="download-btn">
+                Download Itinerary
+            </button>
+
+            <button id="print-btn">
+                Print
+            </button>
+
+            <button id="share-btn">
+                Share Trip
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <h2>ATLAS</h2>
+
+            <p>
+                Explore. Plan. Experience.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            index.htmlHome</a>
+
+            destinations.htmlDestinations</a>
+
+            planner.htmlTrip Planner</a>
+
+            about.htmlAbout</a>
+
+            contact.htmlContact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ATLAS Travel Planner. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
