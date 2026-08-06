@@ -126,3 +126,66 @@ body{
 .nav-links a:hover{
     color:var(--aqua);
 }
+
+/* HERO */
+
+.hero{
+
+    min-height:85vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:6%;
+
+    background:
+    linear-gradient(
+        rgba(5,15,20,.45),
+        rgba(5,15,20,.8)
+    ),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.trip-tag{
+
+    display:inline-block;
+
+    background:
+    rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    padding:.6rem 1.1rem;
+
+    border-radius:50px;
+
+    margin-bottom:1rem;
+
+    font-weight:600;
+}
+
+.hero-content h1{
+
+    font-size:
+    clamp(4rem,10vw,8rem);
+
+    line-height:.9;
+
+    margin-bottom:1rem;
+}
+
+.hero-content p{
+
+    color:var(--text-soft);
+
+    font-size:1.2rem;
+}
