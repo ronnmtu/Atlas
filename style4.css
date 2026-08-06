@@ -551,3 +551,59 @@ main{
     background:#ff5c5c;
     color:white;
 }
+
+/*WEATHER AND ROUTE */
+
+.travel-info{
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr;
+
+    gap:25px;
+
+    margin-top:5rem;
+}
+
+.route-card,
+.weather-card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:var(--radius);
+
+    padding:2rem;
+}
+
+.route-card ul{
+
+    list-style:none;
+
+    margin-top:1rem;
+}
+
+.route-card li{
+
+    margin-bottom:1rem;
+
+    font-size:1.1rem;
+}
+
+.weather{
+
+    margin-top:1rem;
+
+    text-align:center;
+}
+
+.weather h3{
+
+    font-size:3rem;
+
+    color:var(--gold);
+}
