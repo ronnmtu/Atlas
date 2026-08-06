@@ -1,4 +1,11 @@
-
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHMbnbvK9xzH-V8MpuhyUyFvLVBFcidAUgQ1RiF4o76Q&s=1024);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:var(--text);
+    line-height:1.7;
+}
 :root{
     --primary:#1B4965;
     --accent:#F4D35E;
@@ -13,11 +20,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-    background:violet;
-    color:var(--text);
-    line-height:1.7;
-}
+
 
 
 
@@ -115,4 +118,17 @@ footer{
 
 h2{
     text-align:center;
+}
+.about-container{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    box-sizing:border-box;
+    gap:20px;
+}
+.mission-section{
+    flex:1;
+},
+.vision-section{
+    flex:1;
 }
