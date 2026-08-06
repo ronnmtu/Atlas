@@ -202,3 +202,20 @@ function updateSummary() {
   }
 
 }
+
+const budgetInput = document.getElementById("budget");
+const budgetLevel = document.getElementById("budgetLevel");
+
+budgetInput.addEventListener("input", () => {
+
+  const value = Number(budgetInput.value);
+
+  if (value < 500) {
+    budgetLevel.textContent = "Budget Trip";
+  } else if (value < 2000) {
+    budgetLevel.textContent = "Mid-range Trip";
+  } else {
+    budgetLevel.textContent = "Luxury Trip";
+  }
+
+});
