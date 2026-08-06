@@ -49,3 +49,41 @@ function saveData(){
     );
 
 }
+
+//day tabs
+
+function renderDayTabs(){
+
+    dayTabs.innerHTML = "";
+
+    Object.keys(itinerary).forEach(day => {
+
+        const btn =
+        document.createElement("button");
+
+        btn.classList.add("day-tab");
+
+        if(day === currentDay){
+            btn.classList.add("active");
+        }
+
+        btn.textContent =
+        day.replace("Day","Day ");
+
+        btn.addEventListener(
+            "click",
+            () => {
+
+                currentDay = day;
+
+                renderDayTabs();
+                renderActivities();
+
+            }
+        );
+
+        dayTabs.appendChild(btn);
+
+    });
+
+}
