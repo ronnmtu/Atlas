@@ -397,3 +397,9 @@ document
 
     }
 );
+
+//load
+
+renderDayTabs();
+
+renderActivities();
