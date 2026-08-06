@@ -218,3 +218,41 @@ function renderActivities(){
 
     updateStats();
 }
+
+//add actitvity
+
+addActivityBtn.addEventListener(
+    "click",
+    () => {
+
+        const time =
+        prompt("Enter activity time:");
+
+        if(!time) return;
+
+        const title =
+        prompt("Activity name:");
+
+        if(!title) return;
+
+        const location =
+        prompt("Location:");
+
+        if(!location) return;
+
+        itinerary[currentDay].push({
+
+            time,
+            title,
+            location,
+
+            completed:false
+
+        });
+
+        saveData();
+
+        renderActivities();
+
+    }
+);
