@@ -119,19 +119,37 @@ header.scrolled{
 /* NAVIGATION */
 
 .nav{
-    display: flex;
-    gap: 35px;
-    list-style: none;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:1rem 6%;
+
+    background:
+    rgba(7,25,35,.75);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
 }
 
 .nav a{
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
 
-    font-weight: 500;
-    position: relative;
-    transition: .3s;
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:var(--aqua);
 }
 
 /* Underline Animation */
@@ -145,13 +163,13 @@ header.scrolled{
     width: 0%;
     height: 2px;
 
-    background: #f4a261;
+    background: #071923;
     transition: .3s;
 
 }
 
 .nav a:hover{
-    color: #f4a261;
+    color: #071923;
 }
  .nav a:hover::after{
     width: 100%;
