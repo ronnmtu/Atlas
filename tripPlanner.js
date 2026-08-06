@@ -53,3 +53,40 @@ function saveTrip(e) {
     return;
 
   }
+  if (budget <= 0) {
+
+    alert("Budget must be greater than 0.");
+    return;
+
+  }
+
+  const trip = {
+
+    id: Date.now(),
+
+    destination,
+
+    startDate,
+
+    endDate,
+
+    budget,
+
+    travelers,
+
+    notes
+
+  };
+
+  trips.push(trip);
+
+  localStorage.setItem("trips", JSON.stringify(trips));
+
+  renderTrips();
+
+  tripForm.reset();
+
+  alert("Trip saved successfully!");
+
+}
+
