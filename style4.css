@@ -645,3 +645,58 @@ textarea{
 textarea::placeholder{
     color:var(--text-soft);
 }
+
+/* ACTN BTNS */
+
+.action-buttons{
+
+    margin-top:3rem;
+
+    display:flex;
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.action-buttons button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:1rem 1.6rem;
+
+    border-radius:50px;
+
+    font-weight:700;
+}
+
+#download-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold),
+        #ffe082
+    );
+
+    color:#071923;
+}
+
+#print-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--aqua),
+        var(--turquoise)
+    );
+
+    color:#071923;
+}
+
+#share-btn{
+
+    background:white;
+    color:#071923;
+}
