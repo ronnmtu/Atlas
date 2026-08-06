@@ -245,6 +245,38 @@ main {
 
 }
 
+.trip-summary {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+}
+
+.summary-card {
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+}
+
+.summary-card h3 {
+
+  font-size: 2rem;
+
+  color: #1B4965;
+
+}
+
 @media(max-width:900px) {
 
   main {
