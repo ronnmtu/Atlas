@@ -334,17 +334,20 @@ filters {
   padding: 8px 16px;
   margin-bottom: 16px;
   margin-top: 8px;
-  border: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-primary);
   border-radius: 20px;
   background: transparent;
   color: var(--color-primary);
   font-family: var(--font-body);
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: var(--turquoise) 0.2s ease;
+  border-color: var(--color-primary);
+  
+ 
 }
 
 .filter-btn:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--navy);
   color: #fff;
 }
 
@@ -398,12 +401,12 @@ filters {
   width: calc(100% - 32px);
   margin: 0 16px 16px;
   padding: 8px;
-  background-color: var(--color-accent);
   border: none;
   border-radius: 6px;
   color: #fff;
   font-weight: 500;
   cursor: pointer;
+  c
 }
 
 .save-btn:hover {
@@ -411,47 +414,43 @@ filters {
 }
 
 footer{
-
-    margin-top:8rem;
-
-    padding:5rem 6%;
-
-    text-align:center;
-
-    border-top:
-    1px solid rgba(255,255,255,.08);
+  margin-top:8rem;
+  padding:5rem 6%;
+  text-align:center;
+  border-top:
+  1px solid rgba(255,255,255,.08);
+  background: var(--color-primary);
 }
 
 .footer-logo h2{
-
-    letter-spacing:4px;
-
-    margin-bottom:.5rem;
+  letter-spacing:4px;
+  margin-bottom:.5rem;
+  color: var(--color-text);
 }
 
 .footer-logo p{
-    color:var(--text-soft);
+  color: var(--color-primary);
 }
 
 .footer-links{
 
-    margin:2rem 0;
+  margin:2rem 0;
 
-    display:flex;
-    justify-content:center;
-    gap:25px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
 
-    flex-wrap:wrap;
+  flex-wrap:wrap;
 }
 
 .footer-links a{
-
-    text-decoration:none;
-    color:white;
+  text-decoration:none;
+  color:white;
+  color: var(--color-text);
 }
 
 .copyright{
-    color:var(--text-soft);
+  color: var(--color-text);
 }
 
 
