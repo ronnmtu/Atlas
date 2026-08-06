@@ -473,3 +473,304 @@ const destinationFlags = {
 // SAVE TRIP
 // (Part 2 continues here)
 // ==========================================================
+// ==========================================================
+// PART 2
+// Save Trips + Render Cards + localStorage
+// ==========================================================
+
+// ---------- Save Trip ----------
+
+tripForm.addEventListener("submit", function (e) {
+
+  e.preventDefault();
+
+  const destination = destinationSelect.value;
+  const start = startDate.value;
+  const end = endDate.value;
+  const tripBudget = budget.value;
+  const people = travelers.value;
+  const tripNotes = notes.value;
+
+  // Validation
+
+  if (destination === "") {
+
+    alert("Please choose a destination.");
+
+    return;
+
+  }
+
+  if (start === "" || end === "") {
+
+    alert("Please select your travel dates.");
+
+    return;
+
+  }
+
+  if (new Date(end) < new Date(start)) {
+
+    alert("End date cannot be before the start date.");
+
+    return;
+
+  }
+
+  if (tripBudget <= 0) {
+
+    alert("Budget must be greater than 0.");
+
+    return;
+
+  }
+
+  const trip = {
+
+    id: Date.now(),
+
+    destination: destination,
+
+    startDate: start,
+
+    endDate: end,
+
+    budget: tripBudget,
+
+    travelers: people,
+
+    notes: tripNotes
+
+  };
+
+  trips.push(trip);
+
+  localStorage.setItem("trips", JSON.stringify(trips));
+
+  renderTrips();
+
+  updateSummary();
+
+  updateProgress();
+
+  alert("🎉 Trip successfully planned!");
+
+  tripForm.reset();
+
+  budgetLevel.textContent = "";
+
+  countdownPreview.textContent = "";
+
+});
+
+// ==========================================================
+// Render Trips
+// ==========================================================
+
+function renderTrips() {
+
+  tripContainer.innerHTML = "";
+
+  if (trips.length === 0) {
+
+    tripContainer.innerHTML = `
+
+        <div class="empty-state">
+
+            <img src="images/travel-empty.png" alt="No Trips">
+
+            <h3>No Trips Yet</h3>
+
+            <p>
+
+                Start planning your first adventure!
+
+            </p>
+
+        </div>
+
+        `;
+
+    return;
+
+  }
+
+  trips.forEach(trip => {
+
+    const image =
+
+      destinationImages[trip.destination] ||
+
+      "images/default.jpg";
+
+    const flag =
+
+      destinationFlags[trip.destination] ||
+
+      "🌍";
+
+    const duration = Math.ceil(
+
+      (
+
+        new Date(trip.endDate) -
+
+        new Date(trip.startDate)
+
+      )
+
+      /
+
+      (1000 * 60 * 60 * 24)
+
+    );
+
+    const daysLeft = Math.ceil(
+
+      (
+
+        new Date(trip.startDate) -
+
+        new Date()
+
+      )
+
+      /
+
+      (1000 * 60 * 60 * 24)
+
+    );
+
+    const card = document.createElement("div");
+
+    card.classList.add("trip-card");
+
+    card.innerHTML = `
+
+            <img
+
+            src="${image}"
+
+            alt="${trip.destination}"
+
+            class="trip-image">
+
+            <div class="trip-content">
+
+                <h2>
+
+                    ${flag} ${trip.destination}
+
+                </h2>
+
+                <p>
+
+                    📅
+
+                    ${trip.startDate}
+
+                    →
+
+                    ${trip.endDate}
+
+                </p>
+
+                <p>
+
+                    🗓
+
+                    ${duration} Days
+
+                </p>
+
+                <p>
+
+                    💰
+
+                    $${trip.budget}
+
+                </p>
+
+                <p>
+
+                    👥
+
+                    ${trip.travelers}
+
+                    Traveller(s)
+
+                </p>
+
+                <p>
+
+                    📝
+
+                    ${trip.notes || "No notes added."}
+
+                </p>
+
+                <p>
+
+                    ⏳
+
+                    ${daysLeft >= 0
+
+        ?
+
+        daysLeft + " days remaining"
+
+        :
+
+        "Trip Completed"
+
+      }
+
+                </p>
+
+                <div class="trip-buttons">
+
+                    <button
+
+                    class="edit-btn"
+
+                    onclick="editTrip(${trip.id})">
+
+                        Edit
+
+                    </button>
+
+                    <button
+
+                    class="delete-btn"
+
+                    onclick="deleteTrip(${trip.id})">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    tripContainer.appendChild(card);
+
+  });
+
+}
+
+// ==========================================================
+// Initial Page Load
+// ==========================================================
+
+renderTrips();
+
+updateSummary();
+
+updateProgress();
+
+// ==========================================================
+// PART 3 CONTINUES BELOW
+// ==========================================================
