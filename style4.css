@@ -347,3 +347,77 @@ main{
     color:var(--text-soft);
 }
 
+/* DAY NAV */
+
+.day-navigation{
+
+    margin-top:5rem;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.day-tabs{
+
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.day-tab{
+
+    border:none;
+
+    background:
+    rgba(255,255,255,.08);
+
+    color:white;
+
+    padding:1rem 1.5rem;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.day-tab:hover{
+    transform:translateY(-3px);
+}
+
+.day-tab.active{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--turquoise),
+        var(--aqua)
+    );
+
+    color:#071923;
+}
+
+#add-day-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:1rem 1.6rem;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--gold),
+        #ffe082
+    );
+}
