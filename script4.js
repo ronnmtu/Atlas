@@ -256,3 +256,57 @@ addActivityBtn.addEventListener(
 
     }
 );
+
+//stats
+
+function updateStats(){
+
+    let totalActivities = 0;
+
+    let completed = 0;
+
+    Object.values(itinerary)
+    .forEach(day=>{
+
+        totalActivities +=
+        day.length;
+
+        day.forEach(activity=>{
+
+            if(activity.completed){
+                completed++;
+            }
+
+        });
+
+    });
+
+    activityCount.textContent =
+    `${totalActivities} Planned`;
+
+    let progress = 0;
+
+    if(totalActivities > 0){
+
+        progress =
+        Math.round(
+            completed /
+            totalActivities *
+            100
+        );
+
+    }
+
+    progressText.textContent =
+    `${progress}%`;
+
+    const circle =
+    document.querySelector(".circle");
+
+    circle.style.background =
+    `conic-gradient(
+        #63d7d8 ${progress}%,
+        rgba(255,255,255,.08) 0
+    )`;
+
+}
