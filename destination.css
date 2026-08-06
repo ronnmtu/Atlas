@@ -1,16 +1,29 @@
-:root {
-  --color-primary: #1B4965;
-  /* deep ocean blue - headers, nav, primary buttons */
-  --color-secondary: #5FA8D3;
-  /* sky/water blue - secondary elements, links */
-  --color-accent: #F4A261;
-  /* sunset orange - CTAs, highlights, badges */
-  --color-bg: #F7F9FA;
-  /* near-white - page background */
-  --color-text: #1A1A1A;
-  /* body text */
-  --font-heading: 'Fraunces', serif;
-  --font-body: 'Inter', sans-serif;
+/* VARIABLES */
+
+:root{
+
+  --bg:#071923;
+
+  --navy:#0c2431;
+
+  --card:rgba(255,255,255,0.08);
+
+  --glass-border:rgba(255,255,255,0.15);
+
+  --text:#ffffff;
+
+  --text-soft:#c8d6df;
+
+  --aqua:#63d7d8;
+
+  --turquoise:#2cb1bc;
+
+  --gold:#f4c95d;
+
+  --shadow:
+  0 20px 60px rgba(0,0,0,.35);
+
+  --radius:24px;
 }
 
 * {
@@ -108,7 +121,9 @@ body {
   text-decoration: none;
   position: relative;
   font-weight: 500;
+   transition:.3s;
 }
+
 
 .header nav a::after {
   content: "";
