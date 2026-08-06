@@ -46,6 +46,21 @@
 
 }
 
+main {
+
+  width: min(1300px, 90%);
+  margin: 60px auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 420px;
+
+  gap: 40px;
+
+  align-items: start;
+
+}
+
 .planner {
 
   width: min(900px, 90%);
