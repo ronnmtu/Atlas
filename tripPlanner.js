@@ -1,12 +1,22 @@
 
 const tripForm = document.getElementById("tripForm");
 const tripContainer = document.getElementById("tripContainer");
-const destinationInput = document.getElementById("destination");
+const destinationSelect = document.getElementById("destination");
 
 let trips = JSON.parse(localStorage.getItem("trips")) || [];
 
 // Load saved destinations from wishlist
 const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+wishlist.forEach(place => {
+
+  const option = document.createElement("option");
+
+  option.value = place.name;
+  option.textContent = place.name;
+
+  destinationSelect.appendChild(option);
+
+});
 
 // Suggestions when typing
 destinationInput.addEventListener("input", () => {
