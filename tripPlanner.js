@@ -24,3 +24,7 @@ destinationInput.addEventListener("input", () => {
   }
 
 });
+
+renderTrips();
+
+tripForm.addEventListener("submit", saveTrip);
