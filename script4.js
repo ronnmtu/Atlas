@@ -15,3 +15,26 @@ JSON.parse(localStorage.getItem("waypointItinerary")) || {
 };
 
 let currentDay = Object.keys(itinerary)[0];
+
+//elements
+
+const dayTabs =
+document.querySelector(".day-tabs");
+
+const timeline =
+document.querySelector(".timeline");
+
+const addDayBtn =
+document.getElementById("add-day-btn");
+
+const addActivityBtn =
+document.getElementById("add-activity-btn");
+
+const activityCount =
+document.getElementById("activity-count");
+
+const progressText =
+document.getElementById("progress-percent");
+
+const notesBox =
+document.querySelector("textarea");
