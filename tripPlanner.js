@@ -90,3 +90,18 @@ function saveTrip(e) {
 
 }
 
+function renderTrips() {
+
+  tripContainer.innerHTML = "";
+
+  if (trips.length === 0) {
+
+    tripContainer.innerHTML = `
+            <p>No trips planned yet.</p>
+        `;
+
+    return;
+
+  }
+
+
