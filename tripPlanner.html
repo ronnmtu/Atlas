@@ -1,58 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trip Planner | Atlas</title>
-    <link rel="stylesheet" href="tripPlanner.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="logo">
-        <span class="logo-text">Atlas</span>
-      </div>
-      <nav>
-        <a href="index.html" class="back-button">Back to Home</a>
-        <a href="destination.html">Destination</a>
-        <a href="tripPlanner.html" class="active">Trip Planner</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
 
-    <main>
-      <section class="planner">
-        <h1>Plan Your Trip</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
-        <form id="tripForm">
-          <input type="text" id="destination" placeholder="Destination" required />
+<body>
+  <header class="header">
+    <div class="logo">
+      <span class="logo-text">Atlas</span>
+    </div>
+    <nav>
+      <a href="index.html" class="back-button">Back to Home</a>
+      <a href="destination.html" class="active">Destination</a>
+      <a href="trip-planner.html">Trip Planner</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-          <input type="date" id="startDate" required />
+  <main>
 
-          <input type="date" id="endDate" required />
+    <section class="planner">
 
-          <input type="number" id="budget" placeholder="Budget ($)" required />
+      <h1>Plan Your Trip</h1>
 
-          <select id="travelers">
-            <option value="">Travellers</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4+</option>
-          </select>
+      <form id="tripForm">
 
-          <textarea id="notes" placeholder="Trip notes..."></textarea>
+        <input type="text" id="destination" placeholder="Destination" required>
 
-          <button type="submit">Save Trip</button>
-        </form>
-      </section>
+        <input type="date" id="startDate" required>
 
-      <section class="saved-trips">
-        <h2>Your Trips</h2>
-        <div id="tripContainer"></div>
-      </section>
-    </main>
+        <input type="date" id="endDate" required>
 
-    <script src="tripPlanner.js"></script>
-  </body>
+        <input type="number" id="budget" placeholder="Budget ($)" required>
+
+        <select id="travelers">
+
+          <option value="">Travellers</option>
+
+          <option>1</option>
+
+          <option>2</option>
+
+          <option>3</option>
+
+          <option>4+</option>
+
+        </select>
+
+        <textarea id="notes" placeholder="Trip notes..."></textarea>
+
+        <button type="submit">
+
+          Save Trip
+
+        </button>
+
+      </form>
+
+    </section>
+
+    <section class="saved-trips">
+
+      <h2>Your Trips</h2>
+
+      <div id="tripContainer"></div>
+
+    </section>
+
+  </main>
+</body>
+
 </html>
