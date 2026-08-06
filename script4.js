@@ -329,3 +329,16 @@ notesBox.addEventListener(
 
     }
 );
+
+//download
+
+document
+.getElementById("download-btn")
+.addEventListener(
+    "click",
+    () => {
+
+        window.print();
+
+    }
+);
