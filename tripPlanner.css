@@ -1,0 +1,58 @@
+.planner {
+
+  width: min(900px, 90%);
+  margin: 50px auto;
+
+}
+
+#tripForm {
+
+  display: grid;
+  gap: 1rem;
+
+}
+
+#tripForm input,
+#tripForm textarea,
+#tripForm select {
+
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+
+}
+
+#tripForm button {
+
+  padding: 15px;
+  background: #1B4965;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.saved-trips {
+
+  width: min(900px, 90%);
+  margin: 60px auto;
+
+}
+
+.trip-card {
+
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+
+}
+
+.trip-card button {
+
+  margin-top: 15px;
+  margin-right: 10px;
+}
