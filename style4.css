@@ -421,3 +421,133 @@ main{
         #ffe082
     );
 }
+
+/* TIMELINE */
+
+.timeline-section{
+    margin-top:4rem;
+}
+
+.timeline-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    margin-bottom:2rem;
+}
+
+.timeline-header h2{
+    font-size:2rem;
+}
+
+#add-activity-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:50px;
+
+    padding:1rem 1.4rem;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--aqua),
+        var(--turquoise)
+    );
+
+    color:#071923;
+
+    font-weight:700;
+}
+
+.timeline{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.activity-card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:25px;
+
+    padding:1.5rem;
+
+    display:grid;
+
+    grid-template-columns:
+    120px
+    1fr
+    auto;
+
+    gap:20px;
+
+    align-items:center;
+
+    transition:.3s;
+}
+
+.activity-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow);
+}
+
+.activity-time{
+
+    color:var(--gold);
+
+    font-size:1.3rem;
+    font-weight:800;
+}
+
+.activity-details h3{
+    margin-bottom:.4rem;
+}
+
+.activity-details p{
+    color:var(--text-soft);
+}
+
+.activity-actions{
+
+    display:flex;
+    gap:10px;
+}
+
+.activity-actions button{
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    padding:.8rem 1rem;
+
+    font-weight:600;
+}
+
+.activity-actions button:first-child{
+
+    background:var(--aqua);
+    color:#071923;
+}
+
+.activity-actions button:last-child{
+
+    background:#ff5c5c;
+    color:white;
+}
