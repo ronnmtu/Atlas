@@ -1,3 +1,18 @@
+root {
+  --color-primary: #1B4965;
+  /* deep ocean blue - headers, nav, primary buttons */
+  --color-secondary: #5FA8D3;
+  /* sky/water blue - secondary elements, links */
+  --color-accent: #F4A261;
+  /* sunset orange - CTAs, highlights, badges */
+  --color-bg: #F7F9FA;
+  /* near-white - page background */
+  --color-text: #1A1A1A;
+  /* body text */
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
 .header {
 
   position: sticky;
