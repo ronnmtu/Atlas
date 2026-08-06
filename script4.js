@@ -310,3 +310,22 @@ function updateStats(){
     )`;
 
 }
+
+//notes
+
+notesBox.value =
+localStorage.getItem(
+    "waypointNotes"
+) || "";
+
+notesBox.addEventListener(
+    "input",
+    () => {
+
+        localStorage.setItem(
+            "waypointNotes",
+            notesBox.value
+        );
+
+    }
+);
