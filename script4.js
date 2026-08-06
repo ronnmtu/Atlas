@@ -38,3 +38,14 @@ document.getElementById("progress-percent");
 
 const notesBox =
 document.querySelector("textarea");
+
+//save
+
+function saveData(){
+
+    localStorage.setItem(
+        "waypointItinerary",
+        JSON.stringify(itinerary)
+    );
+
+}
