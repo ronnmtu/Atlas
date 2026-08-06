@@ -149,3 +149,14 @@ function renderTrips() {
 
 }
 
+function deleteTrip(id) {
+
+  if (!confirm("Delete this trip?")) return;
+
+  trips = trips.filter(trip => trip.id !== id);
+
+  localStorage.setItem("trips", JSON.stringify(trips));
+
+  renderTrips();
+
+}
