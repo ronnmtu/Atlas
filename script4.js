@@ -355,3 +355,45 @@ document
 
     }
 );
+
+//share
+
+document
+.getElementById("share-btn")
+.addEventListener(
+    "click",
+    async () => {
+
+        if(navigator.share){
+
+            try{
+
+                await navigator.share({
+
+                    title:"Waypoint Itinerary",
+
+                    text:
+                    "Check out my trip itinerary."
+
+                });
+
+            }
+
+            catch(error){
+
+                console.log(error);
+
+            }
+
+        }
+
+        else{
+
+            alert(
+                "Sharing is not supported in this browser."
+            );
+
+        }
+
+    }
+);
