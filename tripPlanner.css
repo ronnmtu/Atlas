@@ -141,18 +141,41 @@ main {
 
 .saved-trips {
 
-  width: min(900px, 90%);
-  margin: 60px auto;
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
 
 }
 
 .trip-card {
 
-  background: white;
   padding: 20px;
-  border-radius: 15px;
+
   margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .1);
+
+  border-radius: 15px;
+
+  border: 1px solid #eee;
+
+  transition: .3s;
+
+}
+
+.trip-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+}
+
+.trip-card h3 {
+
+  color: var(--color-primary);
 
 }
 
@@ -179,5 +202,15 @@ main {
 #tripForm button:hover {
 
   background: var(--color-accent);
+
+}
+
+@media(max-width:900px) {
+
+  main {
+
+    grid-template-columns: 1fr;
+
+  }
 
 }
