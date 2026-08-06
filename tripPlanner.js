@@ -28,3 +28,28 @@ destinationInput.addEventListener("input", () => {
 renderTrips();
 
 tripForm.addEventListener("submit", saveTrip);
+
+function saveTrip(e) {
+
+  e.preventDefault();
+
+  const destination = document.getElementById("destination").value.trim();
+  const startDate = document.getElementById("startDate").value;
+  const endDate = document.getElementById("endDate").value;
+  const budget = document.getElementById("budget").value;
+  const travelers = document.getElementById("travelers").value;
+  const notes = document.getElementById("notes").value.trim();
+
+  if (destination === "") {
+
+    alert("Please enter a destination.");
+    return;
+
+  }
+
+  if (startDate === "" || endDate === "") {
+
+    alert("Please select your travel dates.");
+    return;
+
+  }
