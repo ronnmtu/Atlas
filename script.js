@@ -13,6 +13,52 @@ window.addEventListener("scroll", () =>{
     }
 });
 
+const typingElement = document.getElementById("typing");
+
+const words = [
+  "Faster",
+  "Smarter",
+  "Beautiful",
+  "Experiences"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function type() {
+  const currentWord = words[wordIndex];
+
+  if (!deleting) {
+    typingElement.textContent =
+      currentWord.substring(0, charIndex + 1);
+
+    charIndex++;
+
+    if (charIndex === currentWord.length) {
+      deleting = true;
+      setTimeout(type, 1500);
+      return;
+    }
+  } else {
+    typingElement.textContent =
+      currentWord.substring(0, charIndex - 1);
+
+    charIndex--;
+
+    if (charIndex === 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  setTimeout(type, deleting ? 60 : 120);
+}
+
+type();
+
+
+
 // HERO SLIDES
 
 const slides = document.querySelectorAll(".slide");

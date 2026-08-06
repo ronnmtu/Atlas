@@ -107,7 +107,7 @@ body {
 }
 
 .header nav a {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration: none;
   position: relative;
   font-weight: 500;
