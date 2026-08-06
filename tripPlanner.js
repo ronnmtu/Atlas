@@ -103,5 +103,49 @@ function renderTrips() {
     return;
 
   }
+  trips.forEach(trip => {
 
+    const today = new Date();
+    const tripDate = new Date(trip.startDate);
+
+    const daysLeft = Math.ceil(
+      (tripDate - today) /
+      (1000 * 60 * 60 * 24)
+    );
+
+    const card = document.createElement("div");
+
+    card.classList.add("trip-card");
+
+    card.innerHTML = `
+
+            <h3>${trip.destination}</h3>
+
+            <p><strong>Start:</strong> ${trip.startDate}</p>
+
+            <p><strong>End:</strong> ${trip.endDate}</p>
+
+            <p><strong>Budget:</strong> $${trip.budget}</p>
+
+            <p><strong>Travellers:</strong> ${trip.travelers}</p>
+
+            <p><strong>Notes:</strong> ${trip.notes || "None"}</p>
+
+            <p><strong>Countdown:</strong>
+            ${daysLeft >= 0 ? daysLeft + " days left" : "Trip Completed"}
+            </p>
+
+            <button onclick="deleteTrip(${trip.id})">
+
+                Delete
+
+            </button>
+
+        `;
+
+    tripContainer.appendChild(card);
+
+  });
+
+}
 
