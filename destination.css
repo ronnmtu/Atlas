@@ -406,7 +406,7 @@ filters {
   color: #fff;
   font-weight: 500;
   cursor: pointer;
-  c
+  background: var(--color-primary);
 }
 
 .save-btn:hover {
