@@ -119,24 +119,8 @@ header.scrolled{
 /* NAVIGATION */
 
 .nav{
-
-    position:sticky;
-    top:0;
-    z-index:1000;
-
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:1rem 6%;
-
-    background:
-    rgba(7,25,35,.75);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:
-    1px solid rgba(255,255,255,.08);
+    gap:35px;
 }
 
 .nav a{
@@ -146,10 +130,10 @@ header.scrolled{
     font-weight:500;
 
     transition:.3s;
-}
+    font-size:1.rem;
+    position: relative;
 
-.nav a:hover{
-    color:var(--aqua);
+    transition: .3s;
 }
 
 /* Underline Animation */
@@ -163,15 +147,16 @@ header.scrolled{
     width: 0%;
     height: 2px;
 
-    background: #071923;
+    background: #f4a261;
     transition: .3s;
 
 }
 
 .nav a:hover{
-    color: #071923;
+    color: #f4a261;
 }
- .nav a:hover::after{
+ 
+.nav a:hover::after{
     width: 100%;
  }
  
