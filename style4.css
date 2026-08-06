@@ -189,3 +189,57 @@ body{
 
     font-size:1.2rem;
 }
+
+/*MAIN*/
+
+main{
+    width:min(1400px,90%);
+    margin:auto;
+}
+
+/*OVERVIEW*/
+
+.overview{
+
+    margin-top:-70px;
+
+    position:relative;
+    z-index:10;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.overview-card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:var(--radius);
+
+    padding:2rem;
+
+    box-shadow:var(--shadow);
+}
+
+.overview-card h3{
+
+    color:var(--aqua);
+
+    margin-bottom:.7rem;
+
+    font-size:.95rem;
+}
+
+.overview-card p{
+
+    font-size:1.3rem;
+    font-weight:700;
+}
