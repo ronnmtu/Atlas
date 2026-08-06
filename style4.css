@@ -1,0 +1,47 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Urbanist',sans-serif;
+    background:#071923;
+    color:#ffffff;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* VARIABLES */
+
+:root{
+
+    --bg:#071923;
+
+    --navy:#0c2431;
+
+    --card:rgba(255,255,255,0.08);
+
+    --glass-border:rgba(255,255,255,0.15);
+
+    --text:#ffffff;
+
+    --text-soft:#c8d6df;
+
+    --aqua:#63d7d8;
+
+    --turquoise:#2cb1bc;
+
+    --gold:#f4c95d;
+
+    --shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    --radius:24px;
+}
