@@ -182,7 +182,32 @@ header.scrolled{
 }
 
 #typing {
-  color: #00d4ff;
+  color: gold;
+}
+
+#typing {
+    font-size: 3rem;
+    font-weight: bold;
+    display: inline-block; /* So gradient only covers the text area */
+    
+    /* Animated gradient background */
+    background: linear-gradient(270deg, #ff69b4, #ff7f50, #ff69b4);
+    background-size: 600% 600%;
+    
+    /* Clip gradient to text only */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    
+    /* Animation */
+    animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .slides{
