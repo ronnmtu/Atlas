@@ -111,3 +111,110 @@ addDayBtn.addEventListener(
 
     }
 );
+
+//activities
+
+function renderActivities(){
+
+    timeline.innerHTML = "";
+
+    itinerary[currentDay].forEach(
+        (activity,index) => {
+
+            const card =
+            document.createElement("article");
+
+            card.classList.add(
+                "activity-card"
+            );
+
+            card.innerHTML = `
+            
+                <div class="activity-time">
+
+                    ${activity.time}
+
+                </div>
+
+                <div class="activity-details">
+
+                    <h3 class="${
+                        activity.completed
+                        ? "completed"
+                        : ""
+                    }">
+                        ${activity.title}
+                    </h3>
+
+                    <p>
+                        ${activity.location}
+                    </p>
+
+                </div>
+
+                <div class="activity-actions">
+
+                    <button
+                    class="complete-btn">
+
+                        ${
+                            activity.completed
+                            ? "Completed"
+                            : "Complete"
+                        }
+
+                    </button>
+
+                    <button
+                    class="delete-btn">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            `;
+
+           //complete
+
+            card
+            .querySelector(".complete-btn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    activity.completed =
+                    !activity.completed;
+
+                    saveData();
+
+                    renderActivities();
+
+                }
+            );
+
+            //delete
+
+            card
+            .querySelector(".delete-btn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    itinerary[currentDay]
+                    .splice(index,1);
+
+                    saveData();
+
+                    renderActivities();
+
+                }
+            );
+
+            timeline.appendChild(card);
+
+        });
+
+    updateStats();
+}
