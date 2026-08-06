@@ -1,29 +1,19 @@
-/* VARIABLES */
 
 :root{
 
   --bg:#071923;
-
   --navy:#0c2431;
-
-  --card:rgba(255,255,255,0.08);
-
-  --glass-border:rgba(255,255,255,0.15);
-
   --text:#ffffff;
-
   --text-soft:#c8d6df;
-
   --aqua:#63d7d8;
-
   --turquoise:#2cb1bc;
-
   --gold:#f4c95d;
-
   --shadow:
   0 20px 60px rgba(0,0,0,.35);
-
   --radius:24px;
+  --color-primary:#1B4965;
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 * {
@@ -121,7 +111,8 @@ body {
   text-decoration: none;
   position: relative;
   font-weight: 500;
-   transition:.3s;
+  transition:.3s;
+  backdrop-filter:blur(18px);
 }
 
 
@@ -231,13 +222,16 @@ body {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
-  transition: all .35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(27, 73, 101, .08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .12)
+
 }
 
 .stat-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .12)
+
 }
 
 .stat-card h2 {
