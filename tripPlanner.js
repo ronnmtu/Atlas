@@ -170,3 +170,35 @@ function deleteTrip(id) {
   renderTrips();
 
 }
+
+function updateSummary() {
+
+  document.getElementById("tripCount").textContent = trips.length;
+
+  const totalBudget = trips.reduce((sum, trip) => {
+
+    return sum + Number(trip.budget);
+
+  }, 0);
+
+  document.getElementById("budgetTotal").textContent =
+    "$" + totalBudget;
+
+  if (trips.length) {
+
+    const next = [...trips].sort((a, b) =>
+
+      new Date(a.startDate) - new Date(b.startDate)
+
+    )[0];
+
+    document.getElementById("nextTrip").textContent =
+      next.destination;
+
+  } else {
+
+    document.getElementById("nextTrip").textContent = "None";
+
+  }
+
+}
