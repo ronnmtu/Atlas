@@ -1,4 +1,4 @@
-root {
+:root {
   --color-primary: #1B4965;
   /* deep ocean blue - headers, nav, primary buttons */
   --color-secondary: #5FA8D3;
@@ -73,6 +73,33 @@ main {
   gap: 40px;
 
   align-items: start;
+
+}
+
+.planner-header {
+
+  text-align: center;
+  padding: 80px 20px 60px;
+
+  background: linear-gradient(rgba(27, 73, 101, .75),
+      rgba(27, 73, 101, .75));
+
+  color: white;
+
+}
+
+.planner-header h1 {
+
+  font-size: 3rem;
+  margin-bottom: 15px;
+
+}
+
+.planner-header p {
+
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
 
 }
 
@@ -197,8 +224,6 @@ main {
 #tripForm button {
 
   background: var(--color-primary);
-
-  color: white;
 
   border: none;
 
