@@ -87,3 +87,27 @@ function renderDayTabs(){
     });
 
 }
+
+//add day
+
+addDayBtn.addEventListener(
+    "click",
+    () => {
+
+        const totalDays =
+        Object.keys(itinerary).length + 1;
+
+        const newDay =
+        `Day${totalDays}`;
+
+        itinerary[newDay] = [];
+
+        currentDay = newDay;
+
+        saveData();
+
+        renderDayTabs();
+        renderActivities();
+
+    }
+);
