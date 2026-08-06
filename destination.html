@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destination</title>
+  <link rel="stylesheet" href="destination.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <span class="logo-text">Atlas</span>
+    </div>
+    <nav>
+      <a href="index.html" class="back-button">Back to Home</a>
+      <a href="destination.html" class="active">Destination</a>
+      <a href="trip-planner.html">Trip Planner</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <div id="toast" class="toast"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">
+        Discover Your Next Adventure
+      </span>
+
+      <h1>
+        Explore the World's Most Beautiful Destinations
+      </h1>
+
+      <p>
+        From pristine beaches to majestic mountains, find your perfect getaway. Browse our curated list of destinations
+        and start planning your next adventure today.
+      </p>
+
+      <div class="hero-search">
+        <input type="text" id="searchInput" placeholder="Search destinations..">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat-card">
+      <h2>100+</h2>
+      <p>Destinations</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>50+</h2>
+      <p>Countries</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>4.8⭐</h2>
+      <p>Average Rating</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>1M+</h2>
+      <p>Travelers</p>
+    </div>
+  </section>
+
+  <section class="featured">
+    <img src="images/bali.jfif" alt="Bali">
+    <div class="featured-content">
+      <span class="featured-tag">Editor's Pick</span>
+
+      <h2>Bali, Indonesia</h2>
+      <div class="rating">
+        <span>⭐ 4.5 - 12,500 Reviews</span>
+      </div>
+      <p>
+        Experience the tropical paradise of Bali, with its stunning beaches, vibrant culture, and lush landscapes. From
+        surfing to temple visits, Bali offers an unforgettable adventure for every traveler.
+      </p>
+
+      <div class="featured-details">
+        <p><strong>Best Season:</strong> April - October</p>
+        <p><strong>Budget:</strong> Mid-range</p>
+        <p><strong>Category:</strong> Beach</p>
+      </div>
+      <button id="featuredBtn">Explore Destination</button>
+    </div>
+  </section>
+
+  <section class="filter" aria-label="Filter destination by category">
+    <h3>Filter by Category</h3>
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="beach">Beaches</button>
+    <button class="filter-btn" data-category="adventure">Mountains</button>
+    <button class="filter-btn" data-category="city">Cities</button>
+    <button class="filter-btn" data-category="culture">Cultural</button>
+    <button class="filter-btn" data-category="budget">Budget</button>
+  </section>
+
+  <section id="destination-grid" class="destination-grid">
+    <!-- Destination cards will be dynamically inserted here -->
+  </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Atlas. All rights reserved.</p>
+  </footer>
+  <script src="destination.js"></script>
+</body>
+
+</html>
