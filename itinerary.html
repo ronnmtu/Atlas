@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS | itinerary</title>
+
+    <link rel="stylesheet" href="itinerary.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="images\icon.png" type="image/png">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div class="logo-text">
+
+                <h2>ATLAS</h2>
+
+                <span>Plan • Explore • Experience</span>
+
+            </div>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="destination.html">Destinations</a>
+            <a href="itinerary.html">Itinerary</a>
+            <a href="tripPlanner.html">Plan Your Trip</a>
+            <a href="about.html">About</a>
+            <a href="./Atlas - Copy/contact.html">Reach Out</a>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="trip-tag">
+                Your Planned Adventure
+            </span>
+
+            <h1 id="hero-destination">
+                Select A Destination
+            </h1>
+
+            <p id="hero-dates">
+                Plan Your Next Trip
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <!-- TRIP OVERVIEW -->
+
+        <section class="overview">
+
+            <div class="overview-card">
+
+                <h3>Destination</h3>
+
+                <p id="destination">
+                    Not Selected
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h3>Duration</h3>
+
+                <p id="duration">
+                    No dates
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h3>Travellers</h3>
+
+                <p id="travellers">
+                    0 travellers
+                </p>
+
+            </div>
+
+            <div class="overview-card">
+
+                <h3>Activities</h3>
+
+                <p id="activity-count">
+                    0 Planned
+                </p>
+
+            </div>
+
+        </section>
+
+         <!-- PROGRESS -->
+
+        <section class="progress-section">
+
+            <h2>Trip Progress</h2>
+
+            <div class="progress-circle">
+
+                <div class="circle">
+
+                    <span id="progress-percent">
+                        0%
+                    </span>
+
+                </div>
+
+                <p>Track Your Progress</p>
+
+            </div>
+
+        </section>
+
+        <!-- stats -->
+        <section class="trip-stats">
+
+            <div class="stat-card">
+
+                <h3 id="tottal-activities-stat">
+                    0
+                </h3>
+
+                <p>Activities</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3 id="completed-stat">
+                    0
+                </h3>
+
+                <p>Completed</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3 id="days-stat">
+                    0
+                </h3>
+
+                <p>Days planned</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3 id="traveller-stat">
+                    0
+                </h3>
+
+                <p>Travellers</p>
+
+            </div>
+
+        </section>
+
+         <!-- DAY NAVIGATION -->
+
+        <section class="day-navigation">
+
+            <div class="day-tabs">
+                <!-- js insert day nav -->
+            </div>
+
+            <button id="add-day-btn">
+                + Add Day
+            </button>
+
+        </section>
+
+        <!-- TIMELINE -->
+
+        <section class="timeline-section">
+
+            <div class="timeline-header">
+
+                <h2>
+                    Day 1 Activities
+                </h2>
+
+                <button id="add-activity-btn">
+                    + Add Activity
+                </button>
+
+            </div>
+
+            <div class="timeline">
+                <!-- js insert activities -->
+            </div>
+
+        </section>
+
+        <!-- ROUTE & WEATHER -->
+
+        <section class="travel-info">
+
+            <div class="route-card">
+
+                <h2>
+                    Today's Route
+                </h2>
+
+                <ul>
+
+                    <li> Hotel</li>
+
+                    <li>📍 Activity</li>
+
+                    <li>📍 Activity</li>
+
+                    <li>📍 Activity</li>
+
+                </ul>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h2>
+                    Weather
+                </h2>
+
+                <div class="weather">
+
+                    <h3 id="weather-temp">
+                        --
+                    </h3>
+
+                    <p id="weather-condition">
+                        loading..
+                    </p>
+
+                    <span id="weather-location">
+                        Destination
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NOTES -->
+
+        <section class="notes-section">
+
+            <h2>
+                Travel Notes
+            </h2>
+
+            <textarea
+                placeholder="Add notes for this trip..."
+            ></textarea>
+
+        </section>
+
+
+        <!-- ACTIONS -->
+
+        <section class="action-buttons">
+
+            <button id="download-btn">
+                Download Itinerary
+            </button>
+
+            <button id="print-btn">
+                Print
+            </button>
+
+            <button id="share-btn">
+                Share Trip
+            </button>
+
+        </section>
+
+        <div class="modal hidden" id="activityModal">
+            <div class="modal-content">
+                <h2>Add Activity</h2>
+
+               <input
+                    type="time"
+                    id="activityTime"
+                >
+
+                <input
+                    type="text"
+                    id="activityTitle"
+                    placeholder="Activity Name"
+                >
+
+                <input
+                    type="text"
+                    id="activityLocation"
+                    placeholder="Location"
+                >
+
+                <div class="modal-buttons">
+                    <button id="saveActivity">
+                        Save Activity
+                    </button>
+
+                    <button id="closeModal">
+                         Cancel
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <h2>ATLAS</h2>
+
+            <p>
+                Explore. Plan. Experience.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="destinations.html">Destinations</a></li>          
+
+            <li><a href="itinerary.html">Itinerary</a></li>
+
+            <li><a href="tripPlanner.html">Trip Planner</a></li>
+
+            <li><a href="about.html">About Us</a></li>
+
+            <li><a href="./Atlas - Copy/contact.html">Reach Out</a></li>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ATLAS Travel Planner. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="itinerary.js"></script>
+
+</body>
+</html>

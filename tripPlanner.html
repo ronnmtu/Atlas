@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tripPlanner.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Atlas - Trip Planner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="icon" href="images\icon.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+  <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div class="logo-text">
+
+                <h2>ATLAS</h2>
+
+                <span>Plan • Explore • Experience</span>
+
+            </div>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="destination.html">Destinations</a>
+            <a href="itinerary.html">Itinerary</a>
+            <a href="tripPlanner.html">Plan Your Trip</a>
+            <a href="about.html">About</a>
+            <a href="./Atlas - Copy/contact.html">Reach Out</a>
+            
+        </ul>
+
+    </nav>
+  
+  <main>
+
+    <section class="planner">
+      <div class="planner-header">
+        <h1>Trip Planner</h1>
+        <p>Plan your trips and keep track of your adventures.</p>
+      </div>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+
+      <p id="budgetLevel"></p>
+
+      <p id="countdownPreview"></p>
+
+      <p id="travelQuote"></p>
+      <form id="tripForm">
+
+        <select id="destination" required>
+
+          <option value="">Choose Destination</option>
+
+        </select>
+
+        <input type="date" id="startDate" required>
+
+        <input type="date" id="endDate" required>
+
+        <input type="number" id="budget" placeholder="Budget ($)" required>
+
+        <select id="travelers">
+
+          <option value="">Travellers</option>
+
+          <option>1</option>
+
+          <option>2</option>
+
+          <option>3</option>
+
+          <option>4+</option>
+
+        </select>
+
+        <textarea id="notes" placeholder="Trip notes..."></textarea>
+
+        <button type="submit">
+
+          Save Trip
+
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <section class="trip-summary">
+
+      <h2>Trip Summary</h2>
+
+      <div class="summary-card">
+
+        <h3 id="tripCount">0</h3>
+
+        <p>Trips Planned</p>
+
+      </div>
+
+      <div class="summary-card">
+
+        <h3 id="budgetTotal">$0</h3>
+
+        <p>Total Budget</p>
+
+      </div>
+
+      <div class="summary-card">
+
+        <h3 id="nextTrip">None</h3>
+
+        <p>Next Departure</p>
+
+      </div>
+
+    </section>
+
+    <section class="saved-trips">
+
+      <h2>Your Trips</h2>
+
+      <div id="tripContainer"></div>
+
+    </section>
+
+  </main>
+  <footer>
+
+        <div class="footer-logo">
+
+            <h2>ATLAS</h2>
+
+            <p>
+                Explore. Plan. Experience.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="destinations.html">Destinations</a></li>          
+
+            <li><a href="itinerary.html">Itinerary</a></li>
+
+            <li><a href="tripPlanner.html">Trip Planner</a></li>
+
+            <li><a href="about.html">About Us</a></li>
+
+            <li><a href="./Atlas - Copy/contact.html">Reach Out</a></li>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ATLAS Travel Planner. All Rights Reserved.
+        </p>
+
+  </footer>
+
+  <script src="tripPlanner.js"></script>
+</body>
+
+</html>
