@@ -16,10 +16,10 @@ window.addEventListener("scroll", () =>{
 const typingElement = document.getElementById("typing");
 
 const words = [
-  "Bring your dreams to life",
-  "Plan your next adventure",
+  "Bring Your Dreams to Life",
+  "Plan Your Next Adventure",
   "Smooth,Fast,Convenient",
-  "Travel with Atlas"
+  "Travel With Atlas"
 ];
 
 let wordIndex = 0;
