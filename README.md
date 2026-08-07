@@ -98,6 +98,9 @@ main
 ## PROJECT SETUP
 
 1. Clone repository
+   ```bash
+   git@github.com:ronnmtu/Atlas.git
+   
 2. Open it in vs code
 3. Open index.html
 
@@ -109,6 +112,12 @@ main
 4. Navigate to the **itinerary** page to organize the activities and plans associated with your trip.
 5. Naviaget to the **about** page to learn more about Atlas Travel Planner and the purpose of the web.
 6. Navigate to the **contact** page to reach out to our team to help you plan your trip.
+
+## LINK
+
+View live website here
+
+https://ronnmtu.github.io/Atlas/
 
 ## AUTHORS
 
