@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="images\icon.png" type="image/png">
 </head>
 <body>
 
@@ -37,17 +39,12 @@
 
         <ul class="nav-links">
 
-            <li><a href="index.html">Home</a></li>
-
-            <li><a href="destination.html">Destinations</a></li>          
-
-            <li><a href="itinerary.html">Itinerary</a></li>
-
-            <li><a href="tripPlanner.html">Trip Planner</a></li>
-
-            <li><a href="about.html">About Us</a></li>
-
-            <li><a href="contact.html">Reach Out</a></li>
+            <a href="index.html">Home</a>
+            <a href="destination.html">Destinations</a>
+            <a href="itinerary.html">Itinerary</a>
+            <a href="tripPlanner.html">Plan Your Trip</a>
+            <a href="about.html">About</a>
+            <a href="./Atlas - Copy/contact.html">Reach Out</a>
 
         </ul>
 
@@ -62,15 +59,15 @@
         <div class="hero-content">
 
             <span class="trip-tag">
-                Coastal Escape
+                Your Planned Adventure
             </span>
 
-            <h1>
-                Mombasa
+            <h1 id="hero-destination">
+                Select A Destination
             </h1>
 
-            <p>
-                12 Aug → 18 Aug • 4 Travellers
+            <p id="hero-dates">
+                Plan Your Next Trip
             </p>
 
         </div>
@@ -90,7 +87,7 @@
                 <h3>Destination</h3>
 
                 <p id="destination">
-                    Mombasa, Kenya
+                    Not Selected
                 </p>
 
             </div>
@@ -100,7 +97,7 @@
                 <h3>Duration</h3>
 
                 <p id="duration">
-                    7 Days
+                    No dates
                 </p>
 
             </div>
@@ -110,7 +107,7 @@
                 <h3>Travellers</h3>
 
                 <p id="travellers">
-                    4 People
+                    0 travellers
                 </p>
 
             </div>
@@ -120,7 +117,7 @@
                 <h3>Activities</h3>
 
                 <p id="activity-count">
-                    12 Planned
+                    0 Planned
                 </p>
 
             </div>
@@ -138,24 +135,25 @@
                 <div class="circle">
 
                     <span id="progress-percent">
-                        68%
+                        0%
                     </span>
 
                 </div>
 
-                <p>Trip Complete</p>
+                <p>Track Your Progress</p>
 
             </div>
 
         </section>
 
-        <!-- STATS -->
-
+        <!-- stats -->
         <section class="trip-stats">
 
             <div class="stat-card">
 
-                <h3>12</h3>
+                <h3 id="tottal-activities-stat">
+                    0
+                </h3>
 
                 <p>Activities</p>
 
@@ -163,25 +161,31 @@
 
             <div class="stat-card">
 
-                <h3>5</h3>
+                <h3 id="completed-stat">
+                    0
+                </h3>
 
-                <p>Attractions</p>
-
-            </div>
-
-            <div class="stat-card">
-
-                <h3>3</h3>
-
-                <p>Restaurants</p>
+                <p>Completed</p>
 
             </div>
 
             <div class="stat-card">
 
-                <h3>7</h3>
+                <h3 id="days-stat">
+                    0
+                </h3>
 
-                <p>Days</p>
+                <p>Days planned</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3 id="traveller-stat">
+                    0
+                </h3>
+
+                <p>Travellers</p>
 
             </div>
 
@@ -192,23 +196,7 @@
         <section class="day-navigation">
 
             <div class="day-tabs">
-
-                <button class="day-tab active">
-                    Day 1
-                </button>
-
-                <button class="day-tab">
-                    Day 2
-                </button>
-
-                <button class="day-tab">
-                    Day 3
-                </button>
-
-                <button class="day-tab">
-                    Day 4
-                </button>
-
+                <!-- js insert day nav -->
             </div>
 
             <button id="add-day-btn">
@@ -234,103 +222,7 @@
             </div>
 
             <div class="timeline">
-
-                <article class="activity-card">
-
-                    <div class="activity-time">
-                        09:00
-                    </div>
-
-                    <div class="activity-details">
-
-                        <h3>
-                            Beach Walk
-                        </h3>
-
-                        <p>
-                            Bamburi Beach
-                        </p>
-
-                    </div>
-
-                    <div class="activity-actions">
-
-                        <button>
-                            Complete
-                        </button>
-
-                        <button>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </article>
-
-                <article class="activity-card">
-
-                    <div class="activity-time">
-                        13:00
-                    </div>
-
-                    <div class="activity-details">
-
-                        <h3>
-                            Seafood Lunch
-                        </h3>
-
-                        <p>
-                            Tamarind Restaurant
-                        </p>
-
-                    </div>
-
-                    <div class="activity-actions">
-
-                        <button>
-                            Complete
-                        </button>
-
-                        <button>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </article>
-
-                <article class="activity-card">
-
-                    <div class="activity-time">
-                        18:30
-                    </div>
-
-                    <div class="activity-details">
-
-                        <h3>
-                            Sunset Cruise
-                        </h3>
-
-                        <p>
-                            Marina Waterfront
-                        </p>
-
-                    </div>
-
-                    <div class="activity-actions">
-
-                        <button>
-                            Complete
-                        </button>
-
-                        <button>
-                            Delete
-                        </button>
-
-                    </div>
-
-                </article>
-
+                <!-- js insert activities -->
             </div>
 
         </section>
@@ -347,13 +239,13 @@
 
                 <ul>
 
-                    <li>🏨 Hotel</li>
+                    <li> Hotel</li>
 
-                    <li>🌊 Beach</li>
+                    <li>📍 Activity</li>
 
-                    <li>🍤 Restaurant</li>
+                    <li>📍 Activity</li>
 
-                    <li>🌅 Marina</li>
+                    <li>📍 Activity</li>
 
                 </ul>
 
@@ -367,11 +259,17 @@
 
                 <div class="weather">
 
-                    <h3>28°C</h3>
+                    <h3 id="weather-temp">
+                        --
+                    </h3>
 
-                    <p>Sunny</p>
+                    <p id="weather-condition">
+                        loading..
+                    </p>
 
-                    <span>Humidity: 70%</span>
+                    <span id="weather-location">
+                        Destination
+                    </span>
 
                 </div>
 
@@ -412,6 +310,41 @@
 
         </section>
 
+        <div class="modal hidden" id="activityModal">
+            <div class="modal-content">
+                <h2>Add Activity</h2>
+
+               <input
+                    type="time"
+                    id="activityTime"
+                >
+
+                <input
+                    type="text"
+                    id="activityTitle"
+                    placeholder="Activity Name"
+                >
+
+                <input
+                    type="text"
+                    id="activityLocation"
+                    placeholder="Location"
+                >
+
+                <div class="modal-buttons">
+                    <button id="saveActivity">
+                        Save Activity
+                    </button>
+
+                    <button id="closeModal">
+                         Cancel
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
     </main>
 
     <!-- FOOTER -->
@@ -440,7 +373,7 @@
 
             <li><a href="about.html">About Us</a></li>
 
-            <li><a href="contact.html">Reach Out</a></li>
+            <li><a href="./Atlas - Copy/contact.html">Reach Out</a></li>
 
         </div>
 

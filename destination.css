@@ -8,9 +8,9 @@
   --turquoise: #2cb1bc;
   --gold: #f4c95d;
   --shadow:
-    0 20px 60px rgba(0, 0, 0, .35);
-  --radius: 24px;
-  --color-primary: #1B4965;
+  0 20px 60px rgba(0,0,0,.35);
+  --radius:24px;
+  --color-primary:#1b4965;
   --font-heading: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
   --color-bg: #F7F9FA;
@@ -54,7 +54,7 @@ html {
 
 body {
   font-family: 'Urbanist', sans-serif;
-  background-color: #071923;
+  background-color: white;
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
@@ -390,6 +390,7 @@ filters {
   font-family: var(--font-heading);
   margin: 12px 16px 4px;
   font-size: 1.1rem;
+  color: var(--navy);
 }
 
 .destination-card p {
