@@ -1,0 +1,134 @@
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHMbnbvK9xzH-V8MpuhyUyFvLVBFcidAUgQ1RiF4o76Q&s=1024);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:var(--text);
+    line-height:1.7;
+}
+:root{
+    --primary:#1B4965;
+    --accent:#F4D35E;
+    --background:#F0F0F0;
+    --text:#333;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+header{
+    background:var(--primary);
+    position:sticky;
+    top:0;
+    z-index:var(--text);
+}
+
+.navbar{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    padding:18px 0;
+}
+
+
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--accent);
+}
+
+.card{
+    background:white;
+    width:100%;
+    max-width:100%;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+footer{
+    margin-top:60px;
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.features{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:20px 10%;
+}
+.feature-box{
+    background-color:white;
+   max-width:300px;
+   text-align:center;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+    allign-items:center;
+}
+.feature-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+.feature-box img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-top:15px;
+}
+
+.card{
+    width:100%;
+}
+
+h2{
+    text-align:center;
+}
+.about-container{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    box-sizing:border-box;
+    gap:20px;
+}
+.mission-section{
+    flex:1;
+},
+.vision-section{
+    flex:1;
+}
