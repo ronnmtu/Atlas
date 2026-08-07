@@ -30,6 +30,12 @@ body{
     overflow-x:hidden;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .html {
   scroll-behavior: smooth;
 }
@@ -113,8 +119,6 @@ body{
     color:var(--aqua);
 }
 
-
-
 #header nav a::after {
   content: "";
   position: absolute;
@@ -157,10 +161,12 @@ main {
 }
 
 .planner {
-  background: white;
+  background: #F2F2F2;
   padding: 35px;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+  backdrop-filter: blur(20px);
+  border: rgba(255, 255, 255, 0.15);
 }
 
 .planner h1 {
@@ -264,6 +270,10 @@ main {
   color: #1B4965;
 }
 
+.summary-card p {
+  color: var(--color-primary);
+}
+
 footer {
   margin-top: 80px;
   background: #1B4965;
@@ -298,9 +308,7 @@ footer p {
   }
 }
 
-/* ==========================================
-   Progress Bar
-========================================== */
+/* PROGRESS BAR*/
 
 .progress-bar {
   width: 100%;
@@ -318,9 +326,7 @@ footer p {
   transition: .4s;
 }
 
-/* ==========================================
-   Budget + Countdown + Quote
-========================================== */
+/*Budget + Countdown + Quote*/
 
 #budgetLevel,
 #countdownPreview,
@@ -350,9 +356,7 @@ footer p {
 
 }
 
-/* ==========================================
-   Trip Card
-========================================== */
+/*TRIP CARD*/
 
 .trip-card {
 
@@ -396,9 +400,7 @@ footer p {
 
 }
 
-/* ==========================================
-   Buttons
-========================================== */
+/* BTNS */
 
 .trip-buttons {
 
@@ -457,9 +459,7 @@ footer p {
 
 }
 
-/* ==========================================
-   Empty State
-========================================== */
+/* EMPTY STATE */
 
 .empty-state {
 
@@ -491,9 +491,7 @@ footer p {
 
 }
 
-/* ==========================================
-   Mobile
-========================================== */
+/* RESPONSIVE */
 
 @media(max-width:768px) {
 
