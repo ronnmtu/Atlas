@@ -437,9 +437,6 @@ const destinationImages = {
 
 };
 
-// ==========================================================
-// COUNTRY FLAGS
-// ==========================================================
 
 const destinationFlags = {
 
@@ -468,17 +465,6 @@ const destinationFlags = {
   "Istanbul, Turkey": "🇹🇷"
 
 };
-
-// ==========================================================
-// SAVE TRIP
-// (Part 2 continues here)
-// ==========================================================
-// ==========================================================
-// PART 2
-// Save Trips + Render Cards + localStorage
-// ==========================================================
-
-// ---------- Save Trip ----------
 
 tripForm.addEventListener("submit", function (e) {
 
@@ -553,7 +539,7 @@ tripForm.addEventListener("submit", function (e) {
 
   updateProgress();
 
-  alert("🎉 Trip successfully planned!");
+  alert(" Trip successfully planned!");
 
   tripForm.reset();
 
@@ -563,9 +549,6 @@ tripForm.addEventListener("submit", function (e) {
 
 });
 
-// ==========================================================
-// Render Trips
-// ==========================================================
 
 function renderTrips() {
 
@@ -665,11 +648,11 @@ function renderTrips() {
 
                 <p>
 
-                    📅
+                    
 
                     ${trip.startDate}
 
-                    →
+                    
 
                     ${trip.endDate}
 
@@ -677,7 +660,7 @@ function renderTrips() {
 
                 <p>
 
-                    🗓
+                    
 
                     ${duration} Days
 
@@ -685,7 +668,7 @@ function renderTrips() {
 
                 <p>
 
-                    💰
+                    
 
                     $${trip.budget}
 
@@ -693,7 +676,7 @@ function renderTrips() {
 
                 <p>
 
-                    👥
+                    
 
                     ${trip.travelers}
 
@@ -703,7 +686,7 @@ function renderTrips() {
 
                 <p>
 
-                    📝
+                    
 
                     ${trip.notes || "No notes added."}
 
@@ -761,16 +744,9 @@ function renderTrips() {
 
 }
 
-// ==========================================================
-// Initial Page Load
-// ==========================================================
-
 renderTrips();
 
 updateSummary();
 
 updateProgress();
 
-// ==========================================================
-// PART 3 CONTINUES BELOW
-// ==========================================================
