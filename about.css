@@ -145,13 +145,68 @@ section{
 }
 
 .mission{
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding: 8rem 8%;
+    background:
+    linear-gradient(
+        180deg,
+        #071923,
+        #0c2431
+    );
+}
 
-    display:grid;
+.aim{
+    align-self: flex-start;
+    max-width: 600px;
+}
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+.aim p{
+    font-size:
+    clamp(1.8rem,3vw,3rem);
 
-    gap:2rem;
+    max-width:800px;
+
+    margin:1rem auto 0;
+
+    line-height:1.1;
+
+    text-align: left;
+}
+
+.aim span{
+    color:#63d7d8;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+}
+
+.vision{
+    align-self: flex-end;
+    max-width: 600px;
+}
+
+.vision p{
+    font-size:
+    clamp(1.8rem,3vw,3rem);
+
+    max-width:800px;
+
+    margin:1rem auto 0;
+
+    line-height:1.1;
+
+    text-align: right;
+}
+
+.vision span{
+    color:#63d7d8;
+
+    letter-spacing:4px;
+
+    font-weight:700;
 }
 
 .glass-card,
