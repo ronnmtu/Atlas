@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tripPlanner.css">
+  <title>Atlas - Trip Planner</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <span class="logo-text">Atlas</span>
+    </div>
+    <nav>
+      <a href="index.html" class="back-button">Back to Home</a>
+      <a href="destination.html" class="active">Destination</a>
+      <a href="trip-planner.html">Trip Planner</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="planner">
+      <div class="planner-header">
+        <h1>Trip Planner</h1>
+        <p>Plan your trips and keep track of your adventures.</p>
+      </div>
+      <div class="progress-bar">
+        <div id="progressFill"></div>
+      </div>
+
+      <p id="budgetLevel"></p>
+
+      <p id="countdownPreview"></p>
+
+      <p id="travelQuote"></p>
+      <form id="tripForm">
+
+        <select id="destination" required>
+
+          <option value="">Choose Destination</option>
+
+        </select>
+
+        <input type="date" id="startDate" required>
+
+        <input type="date" id="endDate" required>
+
+        <input type="number" id="budget" placeholder="Budget ($)" required>
+
+        <select id="travelers">
+
+          <option value="">Travellers</option>
+
+          <option>1</option>
+
+          <option>2</option>
+
+          <option>3</option>
+
+          <option>4+</option>
+
+        </select>
+
+        <textarea id="notes" placeholder="Trip notes..."></textarea>
+
+        <button type="submit">
+
+          Save Trip
+
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <section class="trip-summary">
+
+      <h2>Trip Summary</h2>
+
+      <div class="summary-card">
+
+        <h3 id="tripCount">0</h3>
+
+        <p>Trips Planned</p>
+
+      </div>
+
+      <div class="summary-card">
+
+        <h3 id="budgetTotal">$0</h3>
+
+        <p>Total Budget</p>
+
+      </div>
+
+      <div class="summary-card">
+
+        <h3 id="nextTrip">None</h3>
+
+        <p>Next Departure</p>
+
+      </div>
+
+    </section>
+
+    <section class="saved-trips">
+
+      <h2>Your Trips</h2>
+
+      <div id="tripContainer"></div>
+
+    </section>
+
+  </main>
+  <footer>
+
+    <div class="footer-content">
+
+      <h3>Atlas</h3>
+
+      <p>
+        Helping you discover and plan unforgettable journeys.
+      </p>
+
+      <p>
+
+        © 2026 Atlas Travel Planner
+
+      </p>
+
+    </div>
+
+  </footer>
+  <script src="tripPlanner.js"></script>
+</body>
+
+</html>
