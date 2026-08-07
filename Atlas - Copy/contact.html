@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Atlas Travel — tell us where you want to go and we'll help you get there." />
+  <title>Contact Us | Atlas Travel</title>
+
+  <!-- Google Fonts: Fraunces (display), Work Sans (body), Space Mono (utility/coordinates) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">✦</span> ATLAS
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Destinations</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">CONTACT · ATLAS TRAVEL CO.</p>
+        <h1>Tell us where<br>you want to <em>land</em>.</h1>
+        <p class="hero-sub">
+          Every great trip starts with one message. Fill out the ticket below and one
+          of our travel designers will chart the route with you.
+        </p>
+      </div>
+      <div class="hero-coordinates" aria-hidden="true">
+        <span>51.5072° N</span>
+        <span>0.1276° W</span>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="contact-section" id="contact">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info panel styled as passport stamps -->
+        <div class="info-panel">
+          <h2>Get in touch</h2>
+          <p class="info-lead">
+            Whether it's a solo backpacking route through the Andes or a
+            family trip to the coast, our team replies within 24 hours.
+          </p>
+
+          <ul class="stamp-list">
+            <li class="stamp">
+              <span class="stamp-icon">✉</span>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:hello@atlastravel.co">hello@atlastravel.co</a></p>
+              </div>
+            </li>
+            <li class="stamp">
+              <span class="stamp-icon">☎</span>
+              <div>
+                <h3>Phone</h3>
+                <p><a href="tel:+254700000000">+254 700 000 000</a></p>
+              </div>
+            </li>
+            <li class="stamp">
+              <span class="stamp-icon">⌖</span>
+              <div>
+                <h3>Studio</h3>
+                <p>Nairobi, Kenya — by appointment</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="social-row">
+            <a href="#" aria-label="Atlas on Instagram">IG</a>
+            <a href="#" aria-label="Atlas on X">X</a>
+            <a href="#" aria-label="Atlas on Facebook">FB</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact form styled as a boarding pass -->
+        <div class="ticket-wrap">
+          <form id="contactForm" class="ticket" novalidate>
+            <div class="ticket-top">
+              <div class="ticket-brand">
+                <span class="ticket-brand-mark">✦</span>
+                <div>
+                  <p class="ticket-label">BOARDING PASS</p>
+                  <p class="ticket-sub">ATLAS TRAVEL CO.</p>
+                </div>
+              </div>
+              <p class="ticket-seat">SEAT<br><span id="seatNumber">04A</span></p>
+            </div>
+
+            <div class="ticket-field">
+              <label for="fullName">Passenger name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Jane Wanjiru" autocomplete="name" />
+              <span class="error-msg" id="err-fullName"></span>
+            </div>
+
+            <div class="ticket-field-row">
+              <div class="ticket-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@email.com" autocomplete="email" />
+                <span class="error-msg" id="err-email"></span>
+              </div>
+              <div class="ticket-field">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+254 7xx xxx xxx" autocomplete="tel" />
+                <span class="error-msg" id="err-phone"></span>
+              </div>
+            </div>
+
+            <div class="ticket-field-row">
+              <div class="ticket-field">
+                <label for="destination">Dream destination</label>
+                <select id="destination" name="destination">
+                  <option value="" disabled selected>Choose a region</option>
+                  <option value="Africa">Africa</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="South America">South America</option>
+                  <option value="North America">North America</option>
+                  <option value="Oceania">Oceania</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                <span class="error-msg" id="err-destination"></span>
+              </div>
+              <div class="ticket-field">
+                <label for="travelDate">Departure date</label>
+                <input type="date" id="travelDate" name="travelDate" />
+                <span class="error-msg" id="err-travelDate"></span>
+              </div>
+            </div>
+
+            <div class="ticket-field">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about the trip you're imagining..."></textarea>
+              <span class="error-msg" id="err-message"></span>
+            </div>
+
+            <div class="ticket-perforation" aria-hidden="true"></div>
+
+            <div class="ticket-bottom">
+              <div class="ticket-barcode" aria-hidden="true"></div>
+              <button type="submit" class="btn-submit">
+                Send message <span class="btn-arrow">→</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success confirmation, hidden until JS shows it -->
+          <div class="confirmation-card" id="confirmationCard" hidden>
+            <p class="confirmation-mark">✓</p>
+            <h3>Ticket confirmed!</h3>
+            <p>Thanks<span id="confirmName"></span> — your message is in. We'll be in touch shortly.</p>
+            <button type="button" class="btn-secondary" id="sendAnother">Send another message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PREVIOUS INQUIRIES (localStorage demo) ===================== -->
+    <section class="log-section">
+      <div class="log-inner">
+        <div class="log-heading">
+          <h2>Recent inquiries on this device</h2>
+          <button type="button" id="clearLog" class="btn-text">Clear all</button>
+        </div>
+        <p class="log-empty" id="logEmpty">No messages yet — your submitted ticket will appear here.</p>
+        <ul class="log-list" id="logList"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Atlas Travel Co. — Wander further.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Destinations</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

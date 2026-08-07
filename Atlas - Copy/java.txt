@@ -1,0 +1,213 @@
+/* ==========================================================================
+   ATLAS TRAVEL — contact.html behaviour
+   - Mobile nav toggle
+   - Client-side form validation with inline error messages
+   - Saves each submitted inquiry to localStorage (key: "atlasInquiries")
+   - Renders the saved inquiries back onto the page (DOM manipulation)
+   ========================================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const STORAGE_KEY = "atlasInquiries";
+
+  /* ---------------- Footer year ---------------- */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------------- Mobile nav toggle ---------------- */
+  const navToggle = document.getElementById("navToggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
+    navToggle.classList.toggle("open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  /* ---------------- Random seat number, just for flavor ---------------- */
+  const seatLetters = ["A", "B", "C", "D"];
+  const randomSeat = `${Math.floor(Math.random() * 30) + 1}${seatLetters[Math.floor(Math.random() * seatLetters.length)]}`;
+  document.getElementById("seatNumber").textContent = randomSeat;
+
+  /* ---------------- Form elements ---------------- */
+  const form = document.getElementById("contactForm");
+  const confirmationCard = document.getElementById("confirmationCard");
+  const confirmName = document.getElementById("confirmName");
+  const sendAnotherBtn = document.getElementById("sendAnother");
+
+  const fields = {
+    fullName: document.getElementById("fullName"),
+    email: document.getElementById("email"),
+    phone: document.getElementById("phone"),
+    destination: document.getElementById("destination"),
+    travelDate: document.getElementById("travelDate"),
+    message: document.getElementById("message"),
+  };
+
+  /* ---------------- Validation rules ---------------- */
+  const validators = {
+    fullName: (value) => {
+      if (!value.trim()) return "Please tell us your name.";
+      if (value.trim().length < 2) return "That name looks too short.";
+      return "";
+    },
+    email: (value) => {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!value.trim()) return "An email address helps us reply.";
+      if (!emailPattern.test(value.trim())) return "That email doesn't look valid.";
+      return "";
+    },
+    phone: (value) => {
+      if (!value.trim()) return "";
+      const phonePattern = /^[0-9+\-\s()]{7,20}$/;
+      if (!phonePattern.test(value.trim())) return "That phone number looks off.";
+      return "";
+    },
+    destination: (value) => {
+      if (!value) return "Pick a region so we know where to start.";
+      return "";
+    },
+    travelDate: (value) => {
+      if (!value) return "";
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const chosen = new Date(value);
+      if (chosen < today) return "Pick a date in the future.";
+      return "";
+    },
+    message: (value) => {
+      if (!value.trim()) return "Let us know what you're dreaming up.";
+      if (value.trim().length < 10) return "A few more words would help us plan.";
+      return "";
+    },
+  };
+
+  function setFieldError(name, message) {
+    const input = fields[name];
+    const errorEl = document.getElementById(`err-${name}`);
+    const wrapper = input.closest(".ticket-field");
+    errorEl.textContent = message;
+    wrapper.classList.toggle("field-invalid", Boolean(message));
+  }
+
+  function validateField(name) {
+    const value = fields[name].value;
+    const message = validators[name](value);
+    setFieldError(name, message);
+    return message === "";
+  }
+
+  Object.keys(fields).forEach((name) => {
+    fields[name].addEventListener("blur", () => validateField(name));
+  });
+
+  /* ---------------- localStorage helpers ---------------- */
+  function getInquiries() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (err) {
+      console.error("Could not read saved inquiries:", err);
+      return [];
+    }
+  }
+
+  function saveInquiries(list) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  }
+
+  /* ---------------- Render the saved inquiries list ---------------- */
+  const logList = document.getElementById("logList");
+  const logEmpty = document.getElementById("logEmpty");
+  const clearLogBtn = document.getElementById("clearLog");
+
+  function renderLog() {
+    const inquiries = getInquiries();
+    logList.innerHTML = "";
+
+    if (inquiries.length === 0) {
+      logEmpty.hidden = false;
+      return;
+    }
+    logEmpty.hidden = true;
+
+    inquiries
+      .slice()
+      .reverse()
+      .forEach((inquiry) => {
+        const item = document.createElement("li");
+        item.className = "log-item";
+
+        const name = document.createElement("h4");
+        name.textContent = inquiry.fullName;
+
+        const dest = document.createElement("p");
+        dest.textContent = `Interested in: ${inquiry.destination}`;
+
+        const msg = document.createElement("p");
+        const shortMsg = inquiry.message.length > 80
+          ? `${inquiry.message.slice(0, 80)}...`
+          : inquiry.message;
+        msg.textContent = `"${shortMsg}"`;
+
+        const meta = document.createElement("p");
+        meta.className = "log-meta";
+        meta.textContent = `Seat ${inquiry.seat} · ${new Date(inquiry.submittedAt).toLocaleString()}`;
+
+        item.append(name, dest, msg, meta);
+        logList.appendChild(item);
+      });
+  }
+
+  clearLogBtn.addEventListener("click", () => {
+    localStorage.removeItem(STORAGE_KEY);
+    renderLog();
+  });
+
+  /* ---------------- Form submit ---------------- */
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const allValid = Object.keys(fields)
+      .map((name) => validateField(name))
+      .every(Boolean);
+
+    if (!allValid) {
+      const firstInvalid = Object.keys(fields).find(
+        (name) => validators[name](fields[name].value) !== ""
+      );
+      if (firstInvalid) fields[firstInvalid].focus();
+      return;
+    }
+
+    const inquiry = {
+      fullName: fields.fullName.value.trim(),
+      email: fields.email.value.trim(),
+      phone: fields.phone.value.trim(),
+      destination: fields.destination.value,
+      travelDate: fields.travelDate.value,
+      message: fields.message.value.trim(),
+      seat: document.getElementById("seatNumber").textContent,
+      submittedAt: new Date().toISOString(),
+    };
+
+    const inquiries = getInquiries();
+    inquiries.push(inquiry);
+    saveInquiries(inquiries);
+    renderLog();
+
+    confirmName.textContent = `, ${inquiry.fullName}`;
+    form.hidden = true;
+    confirmationCard.hidden = false;
+    confirmationCard.focus?.();
+  });
+
+  sendAnotherBtn.addEventListener("click", () => {
+    form.reset();
+    Object.keys(fields).forEach((name) => setFieldError(name, ""));
+    confirmationCard.hidden = true;
+    form.hidden = false;
+    fields.fullName.focus();
+  });
+
+  /* ---------------- Initial render ---------------- */
+  renderLog();
+});
