@@ -1,22 +1,31 @@
-//storage
+//load trip data
+
+const trips =
+JSON.parse(
+    localStorage.getItem("trips")
+) || [];
+
+let currentTrip = null;
+
+if (trips.length > 0) {
+    currentTrip = trips[trips.length - 1];
+}
+
+//itinerary storage
 
 let itinerary =
-JSON.parse(localStorage.getItem("waypointItinerary")) || {
-
-    Day1: [
-        {
-            time: "09:00",
-            title: "Beach Walk",
-            location: "Bamburi Beach",
-            completed: false
-        }
-    ]
-
+JSON.parse(
+    localStorage.getItem(
+        "waypointItinerary"
+    )
+) || {
+    Day1: []
 };
 
-let currentDay = Object.keys(itinerary)[0];
+let currentDay =
+Object.keys(itinerary)[0];
 
-//elements
+// elements
 
 const dayTabs =
 document.querySelector(".day-tabs");
@@ -39,6 +48,61 @@ document.getElementById("progress-percent");
 const notesBox =
 document.querySelector("textarea");
 
+//hero + overview data
+
+if(currentTrip){
+
+    const destinationEl =
+    document.getElementById(
+        "destination"
+    );
+
+    const durationEl =
+    document.getElementById(
+        "duration"
+    );
+
+    const travellersEl =
+    document.getElementById(
+        "travellers"
+    );
+
+    const heroDestination =
+    document.getElementById(
+        "hero-destination"
+    );
+
+    const heroDates =
+    document.getElementById(
+        "hero-dates"
+    );
+
+    if(destinationEl){
+        destinationEl.textContent =
+        currentTrip.destination;
+    }
+
+    if(durationEl){
+        durationEl.textContent =
+        `${currentTrip.startDate} → ${currentTrip.endDate}`;
+    }
+
+    if(travellersEl){
+        travellersEl.textContent =
+        `${currentTrip.travelers} Traveller(s)`;
+    }
+
+    if(heroDestination){
+        heroDestination.textContent =
+        currentTrip.destination;
+    }
+
+    if(heroDates){
+        heroDates.textContent =
+        `${currentTrip.startDate} → ${currentTrip.endDate}`;
+    }
+}
+
 //save
 
 function saveData(){
@@ -56,7 +120,8 @@ function renderDayTabs(){
 
     dayTabs.innerHTML = "";
 
-    Object.keys(itinerary).forEach(day => {
+    Object.keys(itinerary)
+    .forEach(day => {
 
         const btn =
         document.createElement("button");
@@ -68,7 +133,10 @@ function renderDayTabs(){
         }
 
         btn.textContent =
-        day.replace("Day","Day ");
+        day.replace(
+            "Day",
+            "Day "
+        );
 
         btn.addEventListener(
             "click",
@@ -112,13 +180,14 @@ addDayBtn.addEventListener(
     }
 );
 
-//activities
+//render acts
 
 function renderActivities(){
 
     timeline.innerHTML = "";
 
-    itinerary[currentDay].forEach(
+    itinerary[currentDay]
+    .forEach(
         (activity,index) => {
 
             const card =
@@ -128,55 +197,49 @@ function renderActivities(){
                 "activity-card"
             );
 
-            card.innerHTML = `
-            
-                <div class="activity-time">
+            card.innerHTML =
 
-                    ${activity.time}
+            `
+            <div class="activity-time">
+                ${activity.time}
+            </div>
 
-                </div>
+            <div class="activity-details">
 
-                <div class="activity-details">
+                <h3 class="${
+                    activity.completed
+                    ? "completed"
+                    : ""
+                }">
 
-                    <h3 class="${
+                    ${activity.title}
+
+                </h3>
+
+                <p>
+                    ${activity.location}
+                </p>
+
+            </div>
+
+            <div class="activity-actions">
+
+                <button class="complete-btn">
+                    ${
                         activity.completed
-                        ? "completed"
-                        : ""
-                    }">
-                        ${activity.title}
-                    </h3>
+                        ? "Completed"
+                        : "Complete"
+                    }
+                </button>
 
-                    <p>
-                        ${activity.location}
-                    </p>
+                <button class="delete-btn">
+                    Delete
+                </button>
 
-                </div>
-
-                <div class="activity-actions">
-
-                    <button
-                    class="complete-btn">
-
-                        ${
-                            activity.completed
-                            ? "Completed"
-                            : "Complete"
-                        }
-
-                    </button>
-
-                    <button
-                    class="delete-btn">
-
-                        Delete
-
-                    </button>
-
-                </div>
-
+            </div>
             `;
 
-           //complete
+            /* COMPLETE */
 
             card
             .querySelector(".complete-btn")
@@ -194,7 +257,7 @@ function renderActivities(){
                 }
             );
 
-            //delete
+            /* DELETE */
 
             card
             .querySelector(".delete-btn")
@@ -217,30 +280,83 @@ function renderActivities(){
         });
 
     updateStats();
+
 }
 
-//add actitvity
+//modal
+
+const modal =
+document.getElementById(
+    "activityModal"
+);
+
+const saveActivityBtn =
+document.getElementById(
+    "saveActivity"
+);
+
+const closeModalBtn =
+document.getElementById(
+    "closeModal"
+);
 
 addActivityBtn.addEventListener(
     "click",
     () => {
 
-        const time =
-        prompt("Enter activity time:");
+        modal.classList.remove(
+            "hidden"
+        );
 
-        if(!time) return;
+    }
+);
+
+closeModalBtn.addEventListener(
+    "click",
+    () => {
+
+        modal.classList.add(
+            "hidden"
+        );
+
+    }
+);
+
+saveActivityBtn.addEventListener(
+    "click",
+    () => {
+
+        const time =
+        document.getElementById(
+            "activityTime"
+        ).value;
 
         const title =
-        prompt("Activity name:");
-
-        if(!title) return;
+        document.getElementById(
+            "activityTitle"
+        ).value;
 
         const location =
-        prompt("Location:");
+        document.getElementById(
+            "activityLocation"
+        ).value;
 
-        if(!location) return;
+        if(
+            !time ||
+            !title ||
+            !location
+        ){
 
-        itinerary[currentDay].push({
+            alert(
+                "Please complete all fields."
+            );
+
+            return;
+
+        }
+
+        itinerary[currentDay]
+        .push({
 
             time,
             title,
@@ -254,6 +370,22 @@ addActivityBtn.addEventListener(
 
         renderActivities();
 
+        modal.classList.add(
+            "hidden"
+        );
+
+        document.getElementById(
+            "activityTime"
+        ).value = "";
+
+        document.getElementById(
+            "activityTitle"
+        ).value = "";
+
+        document.getElementById(
+            "activityLocation"
+        ).value = "";
+
     }
 );
 
@@ -262,16 +394,15 @@ addActivityBtn.addEventListener(
 function updateStats(){
 
     let totalActivities = 0;
-
     let completed = 0;
 
     Object.values(itinerary)
-    .forEach(day=>{
+    .forEach(day => {
 
         totalActivities +=
         day.length;
 
-        day.forEach(activity=>{
+        day.forEach(activity => {
 
             if(activity.completed){
                 completed++;
@@ -290,9 +421,8 @@ function updateStats(){
 
         progress =
         Math.round(
-            completed /
-            totalActivities *
-            100
+            (completed /
+            totalActivities) * 100
         );
 
     }
@@ -303,11 +433,37 @@ function updateStats(){
     const circle =
     document.querySelector(".circle");
 
-    circle.style.background =
-    `conic-gradient(
-        #63d7d8 ${progress}%,
-        rgba(255,255,255,.08) 0
-    )`;
+    if(circle){
+
+        circle.style.background =
+
+        `conic-gradient(
+            #63d7d8 ${progress}%,
+            rgba(255,255,255,.08) 0
+        )`;
+
+    }
+
+    const totalStat = document.getElementById("total-activities-stat");
+    const completedStat = document.getElementById("completed-stat");
+    const daysStat = document.getElementById("days-stat");
+    const travellerStat = document.getElementById("traveller-stat");
+
+    if (totalStat) {
+        totalStat.textContent = totalActivities;
+    } 
+
+    if (completedStat) {
+        completedStat.textContent = completed;
+    }
+
+    if (daysStat) {
+        daysStat.textContent = Object.keys(itinerary).length;
+    }
+
+    if (travellerStat && currentTrip) {
+         travellerStat.textContent = currentTrip.travelers;
+    }
 
 }
 
@@ -333,7 +489,9 @@ notesBox.addEventListener(
 //download
 
 document
-.getElementById("download-btn")
+.getElementById(
+    "download-btn"
+)
 .addEventListener(
     "click",
     () => {
@@ -346,7 +504,9 @@ document
 //print
 
 document
-.getElementById("print-btn")
+.getElementById(
+    "print-btn"
+)
 .addEventListener(
     "click",
     () => {
@@ -359,7 +519,9 @@ document
 //share
 
 document
-.getElementById("share-btn")
+.getElementById(
+    "share-btn"
+)
 .addEventListener(
     "click",
     async () => {
@@ -370,7 +532,8 @@ document
 
                 await navigator.share({
 
-                    title:"Waypoint Itinerary",
+                    title:
+                    "Waypoint Itinerary",
 
                     text:
                     "Check out my trip itinerary."
@@ -398,8 +561,59 @@ document
     }
 );
 
-//load
+//weather
+
+async function loadWeather() {
+    if (!currentTrip) {
+        document.getElementById("weather-condition").textContent =
+            "No trip selected";
+        return;
+    }
+
+    const destination = currentTrip.destination;
+    const city = destination.split(",")[0];
+    const apiKey = "YOUR_API_KEY_HERE";
+
+    try {
+        // Get coordinates
+        const geoResponse = await fetch(
+            `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
+        );
+
+        const geoData = await geoResponse.json();
+
+        if (geoData.length === 0) {
+            throw new Error("City not found");
+        }
+
+        const lat = geoData[0].lat;
+        const lon = geoData[0].lon;
+
+        // Get current weather
+        const weatherResponse = await fetch(
+            `https://wttr.in/${city}?format=j1`
+        );
+
+        const weatherData = await weatherResponse.json();
+
+        document.getElementById("weather-temp").textContent =
+            `${Math.round(weatherData.main.temp)}°C`;
+
+        document.getElementById("weather-condition").textContent =
+            weatherData.weather[0].description;
+
+        document.getElementById("weather-location").textContent = city;
+
+    } catch (error) {
+        console.error(error);
+
+        document.getElementById("weather-condition").textContent =
+            "Weather unavailable";
+    }
+}
+
+//initial load
 
 renderDayTabs();
-
 renderActivities();
+loadWeather();

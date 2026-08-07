@@ -1,19 +1,3 @@
-/* ==========================================================================
-   ATLAS TRAVEL — DESIGN TOKENS
-   Palette:
-     --indigo     #0F1B2D  deep night-sky background
-     --midnight   #16273F  panel / card surface on dark
-     --amber      #E8934A  signature accent (sunset / stamp ink)
-     --sand       #F2E8D5  warm light surface + dark-on-light text
-     --teal       #4A7C74  secondary accent (ocean / stamp ink)
-     --off-white  #FAF7F0  page background on light sections
-   Type:
-     Display  -> "Fraunces"    (headlines, characterful serif)
-     Body     -> "Work Sans"   (paragraphs, UI text)
-     Utility  -> "Space Mono"  (labels, coordinates, ticket data)
-   Signature element: the contact form is styled as an airline boarding
-   pass / ticket stub — perforated edge, seat number, barcode.
-   ========================================================================== */
 
 :root {
   --indigo: #0F1B2D;
@@ -25,7 +9,7 @@
   --off-white: #FAF7F0;
 
   --font-display: "Fraunces", serif;
-  --font-body: "Work Sans", sans-serif;
+ --font-body: "Work Sans", sans-serif;
   --font-mono: "Space Mono", monospace;
 
   --radius-lg: 22px;
@@ -33,9 +17,21 @@
   --radius-sm: 8px;
 
   --shadow-soft: 0 20px 60px -25px rgba(15, 27, 45, 0.45);
+  --bg:#071923;
+  --navy:#0c2431;
+  --card:rgba(255,255,255,0.08);
+  --glass-border:rgba(255,255,255,0.15);
+  --text:#ffffff;
+  --text-soft:#c8d6df;
+  --aqua:#63d7d8;
+  --turquoise:#2cb1bc;
+  --gold:#f4c95d;
+  --shadow:
+  0 20px 60px rgba(0,0,0,.35);
+  --radius:24px;
 }
 
-/* ---------- Reset ---------- */
+/* reset */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -64,79 +60,90 @@ select:focus-visible, textarea:focus-visible {
   outline-offset: 3px;
 }
 
-/* ==========================================================================
-   HEADER / NAV
-   ========================================================================== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: var(--indigo);
-  border-bottom: 1px solid rgba(242, 232, 213, 0.12);
-}
-.header-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--sand);
-  letter-spacing: 0.04em;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.logo-mark { color: var(--amber); }
+/* nav */
+.navbar{
 
-.main-nav ul {
-  display: flex;
-  gap: 32px;
-}
-.main-nav a {
-  font-size: 0.92rem;
-  color: rgba(242, 232, 213, 0.75);
-  font-weight: 500;
-  padding: 6px 2px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-.main-nav a:hover { color: var(--sand); }
-.main-nav a.active {
-  color: var(--amber);
-  border-bottom-color: var(--amber);
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:1rem 6%;
+
+    background: var(--bg);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
 }
 
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  padding: 6px;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
-.nav-toggle span {
-  width: 22px;
-  height: 2px;
-  background: var(--sand);
-  display: block;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ==========================================================================
-   HERO
-   ========================================================================== */
+.logo-icon{
+
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--aqua),
+        var(--gold)
+    );
+
+    border-radius:50%;
+
+    color:#071923;
+    font-weight:800;
+}
+
+.logo-text h2{
+    font-size:1.3rem;
+    letter-spacing:2px;
+    color: white;
+}
+
+.logo-text span{
+    font-size:.75rem;
+    color:var(--text-soft);
+}
+
+.nav-links{
+
+    display:flex;
+    gap:2rem;
+
+    list-style:none;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--aqua);
+}
+
+/* hero */
 .hero {
   position: relative;
-  background: var(--indigo);
+  background: var(--bg);
   color: var(--sand);
   padding: 90px 24px 120px;
   overflow: hidden;
@@ -193,9 +200,7 @@ select:focus-visible, textarea:focus-visible {
   letter-spacing: 0.05em;
 }
 
-/* ==========================================================================
-   CONTACT SECTION
-   ========================================================================== */
+/* contact */
 .contact-section {
   padding: 0 24px 100px;
 }
@@ -208,7 +213,7 @@ select:focus-visible, textarea:focus-visible {
   align-items: start;
 }
 
-/* ---- Info panel ---- */
+/*  Info panel */
 .info-panel {
   background: var(--off-white);
   padding: 46px 8px 20px 8px;
@@ -278,7 +283,7 @@ select:focus-visible, textarea:focus-visible {
 }
 .social-row a:hover { background: var(--indigo); color: var(--sand); }
 
-/* ---- Ticket (form) ---- */
+/*  Ticket (form)  */
 .ticket-wrap { position: relative; }
 .ticket {
   background: var(--midnight);

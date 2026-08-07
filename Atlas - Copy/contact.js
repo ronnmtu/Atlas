@@ -1,18 +1,11 @@
-/* ==========================================================================
-   ATLAS TRAVEL — contact.html behaviour
-   - Mobile nav toggle
-   - Client-side form validation with inline error messages
-   - Saves each submitted inquiry to localStorage (key: "atlasInquiries")
-   - Renders the saved inquiries back onto the page (DOM manipulation)
-   ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
   const STORAGE_KEY = "atlasInquiries";
 
-  /* ---------------- Footer year ---------------- */
+ //footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  /* ---------------- Mobile nav toggle ---------------- */
+  //mobile nav toggle
   const navToggle = document.getElementById("navToggle");
   const mainNav = document.querySelector(".main-nav");
 
@@ -22,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  /* ---------------- Random seat number, just for flavor ---------------- */
+  //numbers
   const seatLetters = ["A", "B", "C", "D"];
   const randomSeat = `${Math.floor(Math.random() * 30) + 1}${seatLetters[Math.floor(Math.random() * seatLetters.length)]}`;
   document.getElementById("seatNumber").textContent = randomSeat;
 
-  /* ---------------- Form elements ---------------- */
+  //elements
   const form = document.getElementById("contactForm");
   const confirmationCard = document.getElementById("confirmationCard");
   const confirmName = document.getElementById("confirmName");
@@ -42,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     message: document.getElementById("message"),
   };
 
-  /* ---------------- Validation rules ---------------- */
+  //validation rules
   const validators = {
     fullName: (value) => {
       if (!value.trim()) return "Please tell us your name.";
@@ -99,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fields[name].addEventListener("blur", () => validateField(name));
   });
 
-  /* ---------------- localStorage helpers ---------------- */
+  //local storage
   function getInquiries() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -114,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
   }
 
-  /* ---------------- Render the saved inquiries list ---------------- */
+  //render saved inquiries
   const logList = document.getElementById("logList");
   const logEmpty = document.getElementById("logEmpty");
   const clearLogBtn = document.getElementById("clearLog");
@@ -162,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderLog();
   });
 
-  /* ---------------- Form submit ---------------- */
+  //form submit
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -208,6 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fields.fullName.focus();
   });
 
-  /* ---------------- Initial render ---------------- */
+  //initial render
   renderLog();
 });

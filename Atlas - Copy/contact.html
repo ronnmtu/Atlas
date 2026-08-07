@@ -6,7 +6,7 @@
   <meta name="description" content="Get in touch with Atlas Travel — tell us where you want to go and we'll help you get there." />
   <title>Contact Us | Atlas Travel</title>
 
-  <!-- Google Fonts: Fraunces (display), Work Sans (body), Space Mono (utility/coordinates) -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -15,29 +15,41 @@
 </head>
 <body>
 
-  <!-- ===================== HEADER / NAV ===================== -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">✦</span> ATLAS
-      </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Destinations</a></li>
-          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+  <!-- nav -->
+  <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ✦
+            </div>
+
+            <div class="logo-text">
+
+                <h2>ATLAS</h2>
+
+                <span>Plan • Explore • Experience</span>
+
+            </div>
+
+        </div>
+
+        <ul class="nav-links">
+
+            <a href="../index.html">Home</a>
+            <a href="../destination.html">Destinations</a>
+            <a href="../itinerary.html">Itinerary</a>
+            <a href="../tripPlanner.html">Plan Your Trip</a>
+            <a href="../about.html">About</a>
+            <a href="contact.html">Reach Out</a>
+            
         </ul>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  </nav>
+
 
   <main>
 
-    <!-- ===================== HERO ===================== -->
+    <!-- hero -->
     <section class="hero">
       <div class="hero-inner">
         <p class="eyebrow">CONTACT · ATLAS TRAVEL CO.</p>
@@ -53,7 +65,7 @@
       </div>
     </section>
 
-    <!-- ===================== CONTACT SECTION ===================== -->
+    <!-- contact form-->
     <section class="contact-section" id="contact">
       <div class="contact-grid">
 
@@ -178,7 +190,7 @@
       </div>
     </section>
 
-    <!-- ===================== PREVIOUS INQUIRIES (localStorage demo) ===================== -->
+    <!-- PREVIOUS INQUIRIES (localStorage demo) -->
     <section class="log-section">
       <div class="log-inner">
         <div class="log-heading">
@@ -192,7 +204,7 @@
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!--  FOOTER  -->
   <footer class="site-footer">
     <div class="footer-inner">
       <p>© <span id="year"></span> Atlas Travel Co. — Wander further.</p>
