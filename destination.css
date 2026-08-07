@@ -390,6 +390,7 @@ filters {
   font-family: var(--font-heading);
   margin: 12px 16px 4px;
   font-size: 1.1rem;
+  color: var(--navy);
 }
 
 .destination-card p {
