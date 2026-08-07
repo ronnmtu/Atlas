@@ -143,10 +143,10 @@ body {
   align-items: flex-end;
   text-align: center;
   padding: 6%;
-  background: linear-gradient(rgba(5, 15, 20, .45), rgba(5, 15, 29, .8)), url("images/patagonia.jfif");
+  background: linear-gradient(rgba(5, 15, 20, .45), rgba(5, 15, 29, .8)), url("images/paris.jfif");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+
 
 }
 
@@ -220,14 +220,15 @@ body {
 }
 
 .stat-card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
   border-radius: 18px;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(27, 73, 101, .08);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .12)
+  box-shadow: rgba(255, 255, 255, 0.15)
 }
 
 .stat-card:hover {
@@ -270,7 +271,7 @@ body {
 
 .featured-tag {
   display: inline-block;
-  background-color: #fff3e7;
+  background-color: var(--color-primary);
   color: var(--color-accent);
   padding: 8px 16px;
   border-radius: 25px;
@@ -367,7 +368,7 @@ filters {
 }
 
 .destination-card {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
